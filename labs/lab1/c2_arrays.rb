@@ -10,10 +10,7 @@
 # Expected: first_and_last([1, 2, 3, 4]) => [1, 4]
 def first_and_last(arr)
   # TODO: Use array indexing with [0] and [-1]
-  new_arr = []
-  new_arr << arr[0]
-  new_arr << arr[-1]
-  new_arr
+  [arr[0], arr[-1]]
 end
 
 # Exercise 2: Array methods
@@ -45,7 +42,7 @@ end
 # Expected: sum_array([1, 2, 3, 4]) => 10
 def sum_array(arr)
   # TODO: Use .sum or .reduce method
-  arr.sum()
+  arr.sum
 end
 
 # Exercise 6: Array operations
