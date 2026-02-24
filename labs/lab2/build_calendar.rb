@@ -13,8 +13,8 @@ output_file = ARGV[3]
 
 #проверяем даты
 begin
-  start_date = Date.strptime(start_date_str, "%d.%m.%y")
-  end_date = Date.strptime(end_date_str, "%d.%m.%y")
+  start_date = Date.strptime(start_date_str, '%d.%m.%Y')
+  end_date = Date.strptime(end_date_str, '%d.%m.%Y')
 rescue
   puts "Ошибка: неверный формат даты. Используйте ДД.ММ.ГГ"
   exit
