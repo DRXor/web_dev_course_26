@@ -23,7 +23,7 @@ class CreditCardPayment < PaymentStrategy
   # TODO: Implement pay method
   # Return "Paid $#{amount} using Credit Card ending in #{last_4_digits}"
   def pay(amount)
-    nil
+    return "Paid $#{amount} using Credit Card ending in #{last_4_digits}"
   end
   
   private
@@ -41,7 +41,7 @@ class PayPalPayment < PaymentStrategy
   # TODO: Implement pay method
   # Return "Paid $#{amount} using PayPal account #{email}"
   def pay(amount)
-    nil
+    return "Paid $#{amount} using PayPal account #{email}"
   end
 end
 
@@ -53,7 +53,7 @@ class CryptoPayment < PaymentStrategy
   # TODO: Implement pay method
   # Return "Paid $#{amount} using Crypto wallet #{wallet_address}"
   def pay(amount)
-    nil
+    return "Paid $#{amount} using Crypto wallet #{wallet_address}"
   end
 end
 
@@ -69,7 +69,7 @@ class ShoppingCart
   
   # TODO: Implement set_payment_strategy method
   def set_payment_strategy(strategy)
-    nil
+    @payment_strategy = strategy
   end
   
   def total
@@ -80,7 +80,7 @@ class ShoppingCart
   # Use the payment strategy to process payment
   # Return the result from payment strategy's pay method
   def checkout
-    nil
+    return @payment_strategy::pay(total())
   end
 end
 
