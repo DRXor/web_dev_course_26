@@ -20,8 +20,6 @@ class CreditCardPayment < PaymentStrategy
     @card_number = card_number
   end
   
-  # TODO: Implement pay method
-  # Return "Paid $#{amount} using Credit Card ending in #{last_4_digits}"
   def pay(amount)
     return "Paid $#{amount} using Credit Card ending in #{last_4_digits}"
   end
@@ -38,8 +36,6 @@ class PayPalPayment < PaymentStrategy
     @email = email
   end
   
-  # TODO: Implement pay method
-  # Return "Paid $#{amount} using PayPal account #{email}"
   def pay(amount)
     return "Paid $#{amount} using PayPal account #{@email}"
   end
@@ -50,8 +46,6 @@ class CryptoPayment < PaymentStrategy
     @wallet_address = wallet_address
   end
   
-  # TODO: Implement pay method
-  # Return "Paid $#{amount} using Crypto wallet #{wallet_address}"
   def pay(amount)
     return "Paid $#{amount} using Crypto wallet #{@wallet_address}"
   end
@@ -67,7 +61,7 @@ class ShoppingCart
     @items << { name: name, price: price }
   end
   
-  # TODO: Implement set_payment_strategy method
+
   def set_payment_strategy(strategy)
     @payment_strategy = strategy
   end
@@ -76,9 +70,7 @@ class ShoppingCart
     @items.sum { |item| item[:price] }
   end
   
-  # TODO: Implement checkout method
-  # Use the payment strategy to process payment
-  # Return the result from payment strategy's pay method
+  
   def checkout
     return @payment_strategy::pay(total())
   end
@@ -96,8 +88,7 @@ end
 class BubbleSort
   include SortStrategy
   
-  # TODO: Implement bubble sort
-  # Return sorted array (ascending order)
+  
   def sort(array)
     n = array.length()
     for i in 0..(n-1) 
@@ -114,8 +105,7 @@ end
 class QuickSort
   include SortStrategy
   
-  # TODO: Implement quick sort or use Ruby's built-in sort
-  # Return sorted array (ascending order)
+  
   def sort(array)
     array.sort()
   end
@@ -124,8 +114,7 @@ end
 class ReverseSort
   include SortStrategy
   
-  # TODO: Implement reverse sort
-  # Return sorted array (descending order)
+  
   def sort(array)
     array.sort().reverse()
   end
@@ -136,13 +125,12 @@ class DataProcessor
     @sort_strategy = sort_strategy
   end
   
-  # TODO: Implement set_strategy method
+  
   def set_strategy(strategy)
     @sort_strategy = strategy
   end
   
-  # TODO: Implement process method
-  # Use the sort strategy to sort the data
+  
   def process(data)
     @sort_strategy.sort(data)
   end
@@ -158,24 +146,18 @@ class CompressionStrategy
 end
 
 class ZipCompression < CompressionStrategy
-  # TODO: Implement compress method
-  # Return "ZIP compressed: #{data}"
   def compress(data)
     return "ZIP compressed: #{data}"
   end
 end
 
 class RarCompression < CompressionStrategy
-  # TODO: Implement compress method
-  # Return "RAR compressed: #{data}"
   def compress(data)
     return "RAR compressed: #{data}"
   end
 end
 
 class NoCompression < CompressionStrategy
-  # TODO: Implement compress method
-  # Return "Not compressed: #{data}"
   def compress(data)
     return "Not compressed: #{data}"
   end
@@ -188,13 +170,12 @@ class FileHandler
     @compression_strategy = compression_strategy
   end
   
-  # TODO: Implement set_compression method
+ 
   def set_compression(strategy)
     @compression_strategy = strategy
   end
   
-  # TODO: Implement save_file method
-  # Compress data using the strategy and return result
+ 
   def save_file(data)
     @compression_strategy.compress(data)
   end

@@ -24,36 +24,31 @@ end
 
 class Car < Vehicle
   def initialize
-    # TODO: Call super with appropriate values
-    # Car: 4 wheels, 5 passengers
-    nil
+    super("Car", 4, 5)
   end
 end
 
 class Motorcycle < Vehicle
   def initialize
-    # TODO: Call super with appropriate values
-    # Motorcycle: 2 wheels, 2 passengers
-    nil
+    super("Motorcycle", 2, 2)
   end
 end
 
 class Truck < Vehicle
   def initialize
-    # TODO: Call super with appropriate values
-    # Truck: 6 wheels, 3 passengers
-    nil
+    super("Truck", 6, 3)
   end
 end
 
 class VehicleFactory
-  # TODO: Implement create_vehicle method
-  # It should take a symbol (:car, :motorcycle, or :truck)
-  # and return an instance of the appropriate class
-  # Return nil for unknown types
   
   def self.create_vehicle(type)
-    nil
+    case type
+    when :car        then Car.new
+    when :motorcycle then Motorcycle.new
+    when :truck      then Truck.new
+    else                  nil
+    end
   end
 end
 
@@ -67,36 +62,32 @@ class Notification
 end
 
 class EmailNotification < Notification
-  # TODO: Implement send method
-  # Return "Email sent: #{message}"
   def send(message)
-    nil
+    return "Email sent: #{message}"
   end
 end
 
 class SMSNotification < Notification
-  # TODO: Implement send method
-  # Return "SMS sent: #{message}"
   def send(message)
-    nil
+    return "SMS sent: #{message}"
   end
 end
 
 class PushNotification < Notification
-  # TODO: Implement send method
-  # Return "Push notification sent: #{message}"
   def send(message)
-    nil
+    return "Push notification sent: #{message}"
   end
 end
 
 class NotificationFactory
-  # TODO: Create a factory method that returns appropriate notification
-  # Input: type (:email, :sms, :push)
-  # Output: instance of appropriate notification class
   
   def self.create(type)
-    nil
+    case type
+    when :email then EmailNotification.new
+    when :sms   then SMSNotification.new
+    when :push  then PushNotification.new
+    else             nil
+    end
   end
 end
 
@@ -112,40 +103,32 @@ end
 class LightButton
   include UIElement
   
-  # TODO: Implement render method
-  # Return "Rendering light button"
   def render
-    nil
+    return "Rendering light button"
   end
 end
 
 class DarkButton
   include UIElement
   
-  # TODO: Implement render method
-  # Return "Rendering dark button"
   def render
-    nil
+    return "Rendering dark button"
   end
 end
 
 class LightTextField
   include UIElement
   
-  # TODO: Implement render method
-  # Return "Rendering light text field"
   def render
-    nil
+    return "Rendering light text field"
   end
 end
 
 class DarkTextField
   include UIElement
   
-  # TODO: Implement render method
-  # Return "Rendering dark text field"
   def render
-    nil
+    return "Rendering dark text field"
   end
 end
 
@@ -164,11 +147,11 @@ class LightThemeFactory < ThemeFactory
   # TODO: Implement create_text_field to return LightTextField
   
   def create_button
-    nil
+    LightButton.new
   end
   
   def create_text_field
-    nil
+    LightTextField.new
   end
 end
 
@@ -177,11 +160,11 @@ class DarkThemeFactory < ThemeFactory
   # TODO: Implement create_text_field to return DarkTextField
   
   def create_button
-    nil
+    DarkButton.new
   end
   
   def create_text_field
-    nil
+    DarkTextField.new
   end
 end
 
