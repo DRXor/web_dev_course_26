@@ -80,7 +80,7 @@ class ShoppingCart
   # Use the payment strategy to process payment
   # Return the result from payment strategy's pay method
   def checkout
-    return @payment_strategy.pay(total)
+    return @payment_strategy::pay(total())
   end
 end
 
