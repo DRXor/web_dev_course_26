@@ -141,6 +141,7 @@ module Observable
   def delete_observer(observer)
     @observers ||= []
     @observers.delete(observer)
+    @observers
   end
   
   def notify_observers(data = nil)
