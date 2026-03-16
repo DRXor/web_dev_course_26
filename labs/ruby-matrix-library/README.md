@@ -12,9 +12,15 @@
 - След матрицы
 - Проверка свойств (квадратная, симметричная)
 - Доступ к строкам и столбцам
+- Решение систем линейных уравнений
+
+## Требования
+- Ruby 2.7 или выше
+- Bundler (для установки зависимостей)
 
 ## Установка 
 
 ```bash
 git clone https://github.com/DRXor/ruby-matrix-library.git
 cd ruby-matrix-library
+bundle install
