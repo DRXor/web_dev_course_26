@@ -6,7 +6,7 @@ RSpec.describe Matrix do
       matrix = Matrix.new(2, 3)
       expect(matrix.rows).to eq(2)
       expect(matrix.cols).to eq(3)
-      expect(matrix[0, 0]).to eq(3)
+      expect(matrix[0, 0]).to eq(0)
     end
 
     it "создаёт матрицу из двумерного массива" do
@@ -49,32 +49,34 @@ RSpec.describe Matrix do
       a = Matrix.new([[1, 2], [3, 4]])
       b = Matrix.new([[2, 0], [1, 2]])
       c = a * b
-      expect(c[0, 0]).to eq(4) #1*2 + 2*1
-      expect(c[0, 1]).to eq(4) #1*0 + 2*2
-      expect(c[1, 0]).to eq(4) #3*2 + 4*1
+      expect(c[0, 0]).to eq(4)  # 1*2 + 2*1 = 4
+      expect(c[0, 1]).to eq(4)  # 1*0 + 2*2 = 4
+      expect(c[1, 0]).to eq(10) # 3*2 + 4*1 = 10
+      expect(c[1, 1]).to eq(8)  # 3*0 + 4*2 = 8
     end
 
     it "умножает матрицу на скаляр" do
       a = Matrix.new([[1, 2], [3, 4]])
       b = a * 2 
-      expect(c[0, 0]).to eq(4) #1*2 + 2*1
-      expect(c[0, 1]).to eq(4) #1*0 + 2*2
-      expect(c[1, 0]).to eq(4) #3*2 + 4*1
+      expect(b[0, 0]).to eq(2)  # 1 * 2 = 2
+      expect(b[0, 1]).to eq(4)  # 2 * 2 = 4
+      expect(b[1, 0]).to eq(6)  # 3 * 2 = 6
+      expect(b[1, 1]).to eq(8)  # 4 * 2 = 8
     end
   end
 
   describe "#determinant" do
-    it "вычисляет детерминан для матрицы 1x1" do
+    it "вычисляет детерминант для матрицы 1x1" do
       matrix = Matrix.new([[5]])
       expect(matrix.determinant).to eq(5)
     end
 
-    it "вычисляет детерминан для матрицы 2x2" do
+    it "вычисляет детерминант для матрицы 2x2" do
       matrix = Matrix.new([[1, 2], [3, 4]])
       expect(matrix.determinant).to eq(-2)
     end
 
-      it "вычисляет детерминан для матрицы 3x3" do
+    it "вычисляет детерминант для матрицы 3x3" do
       matrix = Matrix.new([[6, 1, 1], [4, -2, 5], [2, 8, 7]])
       expect(matrix.determinant).to eq(-306)
     end
@@ -103,5 +105,4 @@ RSpec.describe Matrix do
       expect(transposed[2, 1]).to eq(6)
     end
   end
-
 end

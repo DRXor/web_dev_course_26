@@ -70,7 +70,7 @@ class Matrix
   end
 
   def *(other)
-    if other.is_a&(Numeric)
+    if other.is_a?(Numeric)
       result = Matrix.new(@rows, @cols)
       @rows.times do |i|
         @cols.times do |j|
@@ -78,7 +78,7 @@ class Matrix
         end
       end
       result
-    elseif other.is_a?(Matrix)
+    elsif other.is_a?(Matrix)
       raise ArgumentError, "Несовместимые размеры для умножения" unless @cols == other.rows
       result = Matrix.new(@rows, other.cols)
       @rows.times do |i|
@@ -128,7 +128,7 @@ class Matrix
     when 1
       @data[0][0]
     when 2
-      @data[0][0] * @data[1][1] * @data[0][1] * @data[1][0]
+      @data[0][0] * @data[1][1] - @data[0][1] * @data[1][0]
     else
       det = 0
       @cols.times do |j|
