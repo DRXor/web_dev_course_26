@@ -93,7 +93,7 @@ end
 
 # Exercise 8: Break and next
 # Return an array of numbers from array that are < 10, stop at first number >= 20
-# Expected: process_numbers([5, 8, 12, 25, 3, 15]) => [5, 8, 12]
+# Expected: process_numbers([5, 8, 12, 25, 3, 15]) => [5, 8]
 def process_numbers(arr)
   # TODO: Use break to stop, next to skip
   new_arr = []
@@ -190,7 +190,7 @@ def run_tests
 
   # Test 8
   total_tests += 1
-  if process_numbers([5, 8, 12, 25, 3, 15]) == [5, 8, 12]
+  if process_numbers([5, 8, 12, 25, 3, 15]) == [5, 8]
     tests_passed += 1
     puts "✓ Test 8 passed: process_numbers"
   else

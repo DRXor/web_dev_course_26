@@ -1,0 +1,1223 @@
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Массивы
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Массивы
+
+
+// question: 13799  name: Имена классов
+::Имена классов::[html]<p><pre>\# Функция получает на вход массив объектов и возвращает массив имен классов, которые представлены в исходном массиве.<br>\# Выходной массив должен содержать уникальные элементы.</pre><br></p>{}
+
+
+// question: 13797  name: Разделение по знаку
+::Разделение по знаку::[html]<p><pre>\# Функция получает на вход массив чисел и возвращает два массива - в одном все отрицательные значения<br>\# из исходного массива, в другом - все положительные. Нули и не числовые элементы массивов отбрасываются.</pre><br></p>{}
+
+
+// question: 13798  name: Самая длинная строка
+::Самая длинная строка::[html]<p><pre>\# Функция получает на вход массив строк и возвращает размер самой длинной строки<br>\# Все объекты массива, не являющиеся строкой, игнорируются.<br>\# Для пустого массива возвращается 0</pre><br></p>{}
+
+
+// question: 13800  name: Сдвиг массива
+::Сдвиг массива::[html]<p></p><pre>\# Функция получает на вход массив чисел и число N.<br>\# Возвращает массив, в котором N последних числе из исходного массива стоят в начале.<br>\# [1,2,3,4]\=&gt;[2,3,4,1]<br>\# Если длина входного массива не позволяет выбрать N последних чисел, возвращается пустой массив.</pre><br><p></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Хэши
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Хэши
+
+
+// question: 13805  name: Omakase
+::Omakase::[html]<p></p><pre>\# На вход подается массив хэшей с разными блюдами c указанием цены и заданная стоимость.<br>\# Из метода нужно вернуть 1 случайное блюдо со стоимостью не выше заданной.<br>\# Используйте метода массива .sample для получения случайного элемента или функцию rand(n)<br>\# Если цена блюда не указана, блюдо не может быть возвращено из метода<br>\# Образец\:<br>\# [\{\:name\=&gt;"Chips", \:price\=&gt;10\}, \{\:name\=&gt;"Quesadillas", \:price\=&gt;15\}, \{\:name\=&gt;"Flatbread", \:price\=&gt;8\}, \{\:name\=&gt;"Unknown"\}]</pre><br><p></p>{}
+
+
+// question: 13806  name: Круги
+::Круги::[html]<pre>\# На вход подается массив хэшей с ключами<br>\# радиус и единица измерения (метры или сантиметры)<br>\# [\{r\: 2, unit\: 'm'\}, \{r\: 4, unit\:'cm'\}]<br>\# Вернуть площадь самого большого круга в квадратных метрах<br>\# Для пустого хэша вернуть 0</pre>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Строки
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Строки
+
+
+// question: 13804  name: Палиндромы
+::Палиндромы::[html]<p><pre>\# На вход подается строка, содержащая список слов, разделенных символом ;<br>\# Посчитать, сколько слов в строке является палиндромами<br>\# При проверке игнорировать регистр<br>\# Пример "я;слово;676;дед"<br>\# Ответ\: 3<br>\# Для пустой строки вернуть 0</pre><br></p>{}
+
+
+// question: 13803  name: Парсер чисел
+::Парсер чисел::[html]<p><pre>\# На вход подается строка, содержащая слова и числа, разделенные символом ;<br>\# Найти сумму всех чисел в строке<br>\# Пример "4;word;55;hello"<br>\# Результат - 59<br>\# Для пустой строки вернуть 0</pre><br></p>{}
+
+
+// question: 13802  name: Частотный анализ
+::Частотный анализ::[html]<p><pre>\# Построить по заданной строке хэш с количеством вхождений каждого символа.<br>\# Буквы разных регистров считать одной буквой.<br>\# Пример\: 'aabBccc'<br>\# \{'a'\=&gt;2, 'b'\=&gt;2, c\=&gt;'3'\}<br>\# Для пустой строки вернуть пустой хэш</pre><br></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Теория и рассуждения
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Теория и рассуждения
+
+
+// question: 13810  name: Ruby Doctrine
+::Ruby Doctrine::[html]<p>Объясните два любых ключевых принципа из доктрины Ruby on Rails.<br></p>{}
+
+
+// question: 13812  name: Переменные
+::Переменные::[html]<p>Опишите типы переменных в языке Ruby.<br></p>{}
+
+
+// question: 13811  name: Характеристики языка
+::Характеристики языка::[html]<p>Опишите две любые формальные характеристики языка Ruby и опишите их свойства.<br></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Проектированиe web приложений
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Проектированиe web приложений
+
+
+// question: 14078  name: 1
+::1::[html]Опишите функции, которые должна выполнять модель в архитектуре MVC<br>{}
+
+
+// question: 14079  name: 2
+::2::[html]<p>Опишите функции, которые должен выполнять контроллер в архитектуре MVC.<br></p>{}
+
+
+// question: 14080  name: 3
+::3::[html]<p>Опишите функции, которые должно выполнять представление в архитектуре MVC<br></p>{}
+
+
+// question: 14081  name: 4
+::4::[html]<p>Опишите набор методов API, который, на ваш взгляд, необходимо использовать, для обеспечения доступа к данным о наличии книг в библиотеке.</p><p>Метод API описывается в виде</p><p>&lt;Глагол HTTP&gt; &lt;Относительный URL&gt; [Пример параметров]<br></p>{}
+
+
+// question: 14082  name: 5
+::5::[html]<p>Опишите основные требования, предъявляемые к web приложению.<br></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Классы
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Классы
+
+
+// question: 14083  name: 1
+::1::[html]<p><p>Опишите все недостатки представленного кода\:</p><p></p><pre>class Triangle <br>  <br>  def initialize(a,b,c)<br>    @a \= a<br>    @b \= b<br>    @c \= c<br>  end<br>  <br>  def GetA<br>    @a<br>  end<br>  def GetB<br>    @b<br>  end<br>  def GetC<br>    @c<br>  end<br>  <br>  def GetSize<br>    p \= (a+b+c)/2.0<br>    Math.sqrt(p*(p-a)*(p-b)*(p-c))<br>  end<br>end</pre><br><p></p><br></p>{}
+
+
+// question: 14084  name: 2
+::2::[html]<p>Опишите все недостатки представленного кода</p><p><pre>class Book<br>  attr_accessor \:name, \:pages, \:author<br>  def initialize(name, pages, text, author)<br>    @@name \= name<br>    @@pages \= pages<br>    @@text \= text<br>    @@author \= author<br>  end<br><br>  def getPage(n)<br>    @@pages[n]<br>  end<br>end</pre><br></p>{}
+
+
+// question: 14085  name: 3
+::3::[html]<p>Опишите все недостатки представленного кода (предполагая, что функция логирования <b>write_log </b>реализована корректно)</p><p><pre>class MyLogger<br>  def write_log(s)<br>    puts s<br>  end<br>end<br><br>class Person &lt; MyLogger<br>  def doWork<br>    write_log('I am working!')<br>  end<br><br>end<br><br>class Animal &lt; MyLogger<br>  def doWork<br>    write_log('I can\\'t')<br>  end<br>end</pre><br></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Rails
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Rails
+
+
+// question: 14089  name: 1
+::1::[html]<p>Опишите миграции и классы ActiveRecord для предметной области\:</p><p>Пользователи обмениваются сообщениями. Есть возможность отправить сообщение отдельному пользователю или в группу, в которой может состоять несколько пользователей.<br></p>{}
+
+
+// question: 14090  name: 2
+::2::[html]<p>Опишите миграции и классы ActiveRecord для предметной области\:</p><p>Магазин продает автомобили и ведет учет успешных сделок для каждого продавца. Каждый автомобиль имеет марку и модель, каждая марка автомобиля характеризуется названием и целочисленным полем, отвечающим за % от продажи, который получает продавец.<br></p>{}
+
+
+// question: 14091  name: 3
+::3::[html]<p>Опишите миграции и классы ActiveRecord для предметной области\:</p><p>Пользователи могут оставлять комментарии к публикациям и ставить лайки к публикациям и комментариям.<br></p>{}
+
+
+// question: 14092  name: 4
+::4::[html]<p>Опишите миграции и классы ActiveRecord для предметной области\:</p><p>Есть список мероприятий и пользователей. Пользователь может быть на мероприятии в качестве гостя, организатора или участника.<br></p>{}
+
+
+// question: 14093  name: 5
+::5::[html]<p>Опишите миграции и классы ActiveRecord для предметной области\:</p><p>Есть каталог товаров (цена, описание, название), пользователи и их корзины. Пользователи могут добавлять или удалять товары из корзины (реализацию добавления и удаления писать не нужно).<br></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/TDD
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/TDD
+
+
+// question: 14086  name: 1
+::1::[html]<p>Приведите примеры плохих практик, встречающихся в TDD, с указанием возможных последствий их применения.<br></p>{}
+
+
+// question: 14087  name: 2
+::2::[html]<p>Приведите примеры хороших практик, встречающихся в TTD, с указанием возможных последствий их применения.<br></p>{}
+
+
+// question: 14088  name: 3
+::3::[html]<p>Опишите основные шаги процесса TDD, приводя примеры конкретных действий, которые должен совершать разработчик на каждом этапе.<br></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Active Record
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Active Record
+
+
+// question: 14099  name: 1
+::1::[html]Опишите связь has one through&nbsp; и приведите пример ее применения.<br>{}
+
+
+// question: 14100  name: 2
+::2::[html]Опишите связь has and belongs to many&nbsp; и приведите пример ее применения.<br>{}
+
+
+// question: 14101  name: 3
+::3::[html]Опишите связи has one и belongs to&nbsp; и приведите пример их применения.<br>{}
+
+
+// question: 14102  name: 4
+::4::[html]<p>Опишите ключевые соглашения, используемые в Rails-реализации Active Record и приведите примеры их использования.<br></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Advanced
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Advanced
+
+
+// question: 17875  name: Разделитель
+::Разделитель::[html]<p>Напишите метод, который находит все индексы "равновесия" массива.</p><p>Индексом равновесия массива A&nbsp; длины n будем считать такой индекс j, что сумма элементов A0..j-1 равна сумме Aj+1..n<br>Обработайте крайние случаи. <br></p>{}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Теория 1
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Теория 1
+
+
+// question: 63380  name: Почему так можно?
+::Почему так можно?::[html]<p dir\="ltr" style\="text-align\: left;"></p><p dir\="ltr">Возможность написать следующий код<br><br><strong>a \= 1</strong></p><p dir\="ltr"><strong>a \= 'name'<br><br></strong>обусловлена</p><br><p></p>{
+	~<p dir\="ltr" style\="text-align\: left;">ООП<br></p>
+	=<p dir\="ltr" style\="text-align\: left;">Динамической типизацией<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Слабой типизацией<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Рефлексией<br></p>
+}
+
+
+// question: 63381  name: Почему так можно? 2
+::Почему так можно? 2::[html]<p dir\="ltr" style\="text-align\: left;"></p><p dir\="ltr">Возможность создавать новые методы классов во время выполнения программы обусловлена<br></p><p></p>{
+	~<p dir\="ltr" style\="text-align\: left;">ООП<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Динамической типизацией<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Слабой типизацией<br></p>
+	=<p dir\="ltr" style\="text-align\: left;">Рефлексией<br></p>
+}
+
+
+// question: 42190  name: Почему так можно? 3
+::Почему так можно? 3::[html]<p dir\="ltr" style\="text-align\: left;"></p><p dir\="ltr">Возможность написать следующий код<br><br><strong>class A</strong></p><p dir\="ltr"><strong>def initialize(value \= 0)<br></strong></p><p dir\="ltr"><strong>@value \= value<br></strong></p><p dir\="ltr"><strong>end<br></strong></p><p dir\="ltr"><strong>def add(other)<br>@value +\= other.value<br>end<br></strong></p><p dir\="ltr"><strong>end<br>class B &lt; A<br>end<br><br>a \= A.new<br>b \= B.new(2)</strong></p><p dir\="ltr"><strong>a.add(b)<br></strong>обусловлена</p><br><p></p>{
+	=<p dir\="ltr" style\="text-align\: left;">ООП<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Динамической типизацией<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Слабой типизацией<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Рефлексией<br></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Теория 2
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Теория 2
+
+
+// question: 42192  name: Классы
+::Классы::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верные утверждения о Ruby<br></p>{
+	~%50%<p dir\="ltr" style\="text-align\: left;">Функции в Ruby являются объектами первого класса<br></p>
+	~%50%<p dir\="ltr" style\="text-align\: left;">Замыкания в Ruby создают новую область видимости<br></p>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">Для запуска программы на Ruby ее нужно скомплировать в бинарный файл<br></p>
+	~%-50%Не существует способа вызвать приватный метод вне контекста экземпляра класса.<br>
+}
+
+
+// question: 42191  name: Ключи хэшей
+::Ключи хэшей::[html]Какой тип предпочтительнее всего использовать в качестве ключей для Hash?<br>{
+	=<p dir\="ltr" style\="text-align\: left;">Символьные строки<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Строки<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Целые числа<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Объекты<br></p>
+}
+
+
+// question: 42193  name: Статические поля
+::Статические поля::[html]<p dir\="ltr" style\="text-align\: left;">Использование переменных класса <strong>@@my_var </strong>считается не лучшей практикой потому что<br></p>{
+	~%50%<p dir\="ltr" style\="text-align\: left;">Изменение такой переменной из класса-наследника приводит к сложностям в отладке<br></p>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">Эффективность программы падает, когда используются переменные класса<br></p>
+	~%50%<p dir\="ltr" style\="text-align\: left;">Изменение такой переменной из разных потоков приводит к сложностям в отладке<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Rubocop делает замечания при использовании таких переменных<br></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Основы Ruby 1
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Основы Ruby 1
+
+
+// question: 42198  name: Each-Map
+::Each-Map::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верные утверждения<br></p>{
+	~<p dir\="ltr" style\="text-align\: left;">Метод .each не меняет исходную коллекцию и не имеет мутирующего варианта<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Метод .each не меняет исходную коллекцию, но имеет мутирующий вариант each!<br></p>
+	=<p dir\="ltr" style\="text-align\: left;">Метод .map не меняет исходную коллекцию, но имеет мутирующий вариант map!<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Метод .map не меняет исходную коллекцию и не имеет мутирующего варианта<br></p>
+}
+
+
+// question: 42199  name: Hash
+::Hash::[html]<p dir\="ltr" style\="text-align\: left;">Корректный способ задать пустой массив в качестве значения по умолчанию для хэша выглядит так\:<br></p>{
+	~<p dir\="ltr" style\="text-align\: left;"></p><p>hash \= Hash.new([])<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">hash \= Hash.new(Array.new)</p><p></p>
+	=<p dir\="ltr" style\="text-align\: left;">hash \= Hash.new \{[]\}<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">hash \= Hash.new<br>hash.default \= []</p><br><p></p>
+}
+
+
+// question: 42200  name: Строки
+::Строки::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верные утверждения про строки\:<br></p>{
+	~%-50%<p dir\="ltr" style\="text-align\: left;">Символьные строки нужны для констант и ключей в хешах, строки в " " и ' ' не отличаются<br></p>
+	~%50%<p dir\="ltr" style\="text-align\: left;"></p><p dir\="ltr">Символьные строки нужны для констант и ключей в хешах, строки в " " нужны для строковой интерполяции, а строки в ' ' ее не поддерживают.<br></p><p></p><br><p></p>
+	~%50%<p dir\="ltr" style\="text-align\: left;"></p>object_id постоянный для символьных строк, а для остальных он может быть "заморожен" с помощью "волшебного комментария" в старых версиях ruby и по умолчанию в новых.<br><p></p>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">object_id постоянный для символьных строк, а для остальных он меняется всегда.<br></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Gem
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Gem
+
+
+// question: 63382  name: Архитектура
+::Архитектура::[html]<p dir\="ltr" style\="text-align\: left;">Гем реализует функции для работы с графами и с геометрией. Файл lib/silicium.rb выглядит так\:<br><br></p><div><pre>require 'silicium/version'<br><br>module Silicium<br>  class Error &lt; StandardError; end<br><br>  require_relative 'geometry'<br>  require_relative 'graph'<br><br>end</pre></div>Выберите верное утверждение.<br><p></p>{
+	=<p dir\="ltr" style\="text-align\: left;">Это корректная структура файла, логично оставить в нем только базовый класс ошибки и импорты файлов с реализацией логики.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Это некорректная структура файла, логику гема следовало реализовать в этом же файле.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Это некорректная структура файла, тесты следовало реализовать в этом же файле.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Это корректная структура файла, но объявлять свой класс для ошибки не нужно, достаточно использовать&nbsp; </p><pre>StandardError.</pre><p></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/MVC
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/MVC
+
+
+// question: 42215  name: MVC Puprose
+::MVC Puprose::[html]<p dir\="ltr" style\="text-align\: left;">В MVC приложении на Ruby on Rails нужно реализовать сложную логику обработки данных\: на основе информации из БД анализируется активность пользователей. Как лучше спроектировать эту фичу?<br></p>{
+	=<p dir\="ltr" style\="text-align\: left;">Вынести логику в сервисы или хелперы, реализовать задачу ActiveJob для обработки, по завершению задачи уведомлять пользователя о готовности отчета c использованием ActiveChannel.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Подгрузить все необходимые данные на страницу или в память клиентской части приложения с помощью AJAX, обработать данные на клиенте и сразу показать.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Реализовать метод модели и вызывать его в контроллере, результат работы метода упаковать во ViewModel или аналогичную структуру данных для удобной работы во View.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Это невозможно сделать средствами MVC в RoR, требуется отдельный микросервис.<br></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Migrations
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Migrations
+
+
+// question: 42206  name: Логика работы миграций
+::Логика работы миграций::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верное утверждение<br></p>{
+	=<p dir\="ltr" style\="text-align\: left;">Миграции могут применяться и откатываться в любом окружении, но целостность данных не гарантируется.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Миграции могут применяться и откатываться в любом окружении, целостность данных гарантируется.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Миграции могут применяться в любом окружении, а откатывать миграции можно только в development и test окружениях.<br><br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Миграции могут применяться и откатываться только в development и test окружениях, в production нужно разворачивать базу по готовой схеме без выполнения отдельных миграций.<br><br></p>
+}
+
+
+// question: 42511  name: Транзакции
+::Транзакции::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верное утверждение<br></p>{
+	~<p dir\="ltr" style\="text-align\: left;">Миграции не выполняются в транзакции по умолчанию, но транзакцию можно открыть явно.<br></p>
+	=<p dir\="ltr" style\="text-align\: left;">Миграции выполняются в транзакции по умолчанию, если СУБД поддерживает такую возможность.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Миграции не выполняются в транзакции по умолчанию и открыть транзакцию нельзя.<br></p>
+	~Миграции выполняются в транзакции по умолчанию, если выполняется последовательность миграций, то она будет упакована в общую транзакцию.<br>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Validations
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Validations
+
+
+// question: 42268  name: AR
+::AR::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верное утверждение про кастомные валидации в ActiveRecord <br></p>{
+	~<p dir\="ltr" style\="text-align\: left;">В AR нет кастомных валидаций, только метод validate/validates и его параметры<br></p>
+	=<p dir\="ltr" style\="text-align\: left;">В AR есть обширное API колбеков, которое можно использовать для реализации любой валидации<br></p>
+	~Свои валидации в AR следует делать путем создания триггеров в миграциях<br>
+	~<p dir\="ltr" style\="text-align\: left;">Использование кастомных валидаций возможно, но считается плохой практикой в силу сложности отладки.<br></p>
+}
+
+
+// question: 42267  name: Где?
+::Где?::[html]Выберите верное утверждение про валидацию данных.<br>{
+	~<p dir\="ltr" style\="text-align\: left;">Клиентской валидации достаточно, остальные уровни опциональны.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Серверной валидации достаточно, остальные уровни опциональны.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Валидации на уровне БД достаточно, остальные уровни опциональны.<br></p>
+	=<p dir\="ltr" style\="text-align\: left;">Нужны все уровни валидации, но для разных целей.<br></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/ Associations
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/ Associations
+
+
+// question: 42205  name: Автосборка
+::Автосборка::[html]<p dir\="ltr" style\="text-align\: left;">Машины собирают из деталей, в одной машине несколько деталей, а одна деталь используется в нескольких машинах.<br>Выберите правильные модели для этой предметной области.<br></p>{
+	=<p dir\="ltr" style\="text-align\: left;"></p><div><pre>class Machine &lt; ApplicationRecord<br>  has_and_belongs_to_many \:parts<br>end<br><br>class Part &lt; ApplicationRecord<br>  has_and_belongs_to_many \:machines<br>end</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>class Machine &lt; ApplicationRecord<br>  has_many \:parts<br>end<br><br>class Part &lt; ApplicationRecord<br>  has_many \:machines<br>end</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>class Machine &lt; ApplicationRecord<br>  has_and_belongs_to_many \:parts<br>end<br>class MachinePart &lt; ApplicationRecord<br>  belongs_to \:part<br>  belongs_to \:machine<br>end<br>class Part &lt; ApplicationRecord<br>  has_and_belongs_to_many \:machines<br>end</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;">Такую связь нельзя построить средствами ORM, тут нужно использовать чистый SQL.<br></p>
+}
+
+
+// question: 42204  name: Врачи
+::Врачи::[html]<p dir\="ltr" style\="text-align\: left;">Врачи принимают пациентов по записи.<br>Выберите правильный набор моделей для такой предметной области.<br></p>{
+	=<p dir\="ltr" style\="text-align\: left;"></p><div><pre>class Doctor &lt; ApplicationRecord<br>  has_many \:appointments<br>  has_many \:patients, through\: \:appointments<br>end<br><br>class Patient &lt; ApplicationRecord<br>  has_many \:appointments<br>  has_many \:doctors, through\: \:appointments<br>end<br><br><br>class Appointment &lt; ApplicationRecord<br>  belongs_to \:doctor<br>  belongs_to \:patient<br>end</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>class Doctor &lt; ApplicationRecord<br>  has_many \:appointments<br>  has_many \:patients, through\: \:appointments<br>end<br><br>class Patient &lt; ApplicationRecord<br>  has_many \:appointments<br>  has_many \:doctors, through\: \:appointments<br>end<br><br><br>class Appointment &lt; ApplicationRecord<br>  has_one \:doctor<br>  has_one \:patient<br>end</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>class Doctor &lt; ApplicationRecord<br>  has_many \:appointments<br>  has_many \:patients<br>end<br><br>class Patient &lt; ApplicationRecord<br>  has_many \:appointments<br>  has_many \:doctors<br>end<br><br><br>class Appointment &lt; ApplicationRecord<br>  belongs_to \:doctor<br>  belongs_to \:patient<br>end</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>class Doctor &lt; ApplicationRecord<br>  has_many \:patients, through\: \:appointments<br>end<br><br>class Patient &lt; ApplicationRecord<br>  has_many \:doctors, through\: \:appointments<br>end<br><br><br>class Appointment &lt; ApplicationRecord<br>  belongs_to \:doctor<br>  belongs_to \:patient<br>end</pre></div><br><p></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Routes
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Routes
+
+
+// question: 42216  name: Пример
+::Пример::[html]<p dir\="ltr" style\="text-align\: left;"></p><div><pre>Выьерите верные утверждения\:<br><br>get '/login', to\: 'auth\#new'<br>post '/login', to\: 'auth\#create'<br>get '/logout', to\: 'auth\#logout'</pre></div><br><p></p>{
+	=<p dir\="ltr" style\="text-align\: left;">Это корректные пути.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Это не корректные пути, потому что первые два ведут на один URL.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Это корректные пути, но лучше использовать один глагол в рамках одного блока, например, только GET<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Это не корректные пути, следует писать </p><pre><br>get '/login', to\: 'auth_controller\#new'</pre>иначе фреймворк не поймет где искать метод new.<br><p></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Strong Params
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Strong Params
+
+
+// question: 63383  name: Params 1
+::Params 1::[html]<p>Нужно получить из запроса следующую информацию\:</p><p>В объекте "книга" должны быть указаны название, год выпуска и список авторов. <br>Больше никаких параметров принимать нельзя.<br>Выберите правильную реализацию strong params<br></p>{
+	=<p dir\="ltr" style\="text-align\: left;"></p><div><pre>params.require(\:book).permit(\:title, \:year, authors\: [])</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>params.require(\:book).permit(\:title, \:year, \:authors)</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>params.permit(\:book, \:title, \:year, authors\: [])</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>params.permit(\:book, \:title, \:year, \:authors)<br></pre></div><br><p></p>
+}
+
+
+// question: 42214  name: Strong 2
+::Strong 2::[html]<p dir\="ltr" style\="text-align\: left;">В запросе приходит информация о пользователе\: почта, пароль и подтверждение пароля. Опционально пользователь может указать страну. Все данные пользователя упакованы в JSON по ключу user.<br>Выберите правильную реализцию strong params.<br></p>{
+	=<p dir\="ltr" style\="text-align\: left;"></p><div><pre>params.require(\:user).permit(\:email, \:password, \:password_confirmation, \:country)</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>params.permit(\:user, \:email, \:password, \:password_confirmation, \:country)<br></pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>params.require(\:user).permit(\:email, \:password, \:password_confirmation).maybe(\:country)</pre></div><br><p></p>
+	~<p dir\="ltr" style\="text-align\: left;"></p><div><pre>params.require(\:user).permit(\:email, \:password, \:password_confirmation)</pre></div><br><p></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/View
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/View
+
+
+// question: 42201  name: Layout
+::Layout::[html]<p dir\="ltr" style\="text-align\: left;"></p><div><pre>Выберите верные утверждения<br>&lt;%- if flash[\:error].present? %&gt;<br>  &lt;div class\="form_wrapper"&gt;<br>    &lt;div class\="error_messages"&gt;<br>      &lt;ul&gt;<br>        &lt;%- flash[\:error].each do |error| %&gt;<br>          &lt;li&gt;&lt;%\= error %&gt;&lt;/li&gt;<br>        &lt;% end %&gt;<br>      &lt;/ul&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;% end %&gt;</pre></div><br><p></p>{
+	~%50%В переменной flash ожидается список ошибок по ключу \:error, если они есть, то ошибки будут отредендерены в элементах списка.<br>
+	~%50%Этот блок кода логично вынести в частичное представление<br>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">Этот блок кода логично оставить в одном представлении с остальной версткой страницы<br></p>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">В этом блоке перебираются все сообщения в переменной flash, если они есть, то сообщения будут отредендерены в элементах списка.<br></p>
+}
+
+
+// question: 42203  name: Layouts
+::Layouts::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верное утверждение<br></p>{
+	~<p dir\="ltr" style\="text-align\: left;">В приложении может быть только один layout для всех страниц<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">В приложении может быть много разных layout, но для одного контроллера использоваться будет только один.<br></p>
+	=<p dir\="ltr" style\="text-align\: left;">В приложении может быть много разных layout, их можно выбирать как на уровне контроллера, так и на уровне отдельного метода.<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">В приложении может быть ровно два layout\: один для страниц, второй - для писем.<br></p>
+}
+
+
+// question: 42202  name: Форма
+::Форма::[html]<p dir\="ltr" style\="text-align\: left;"></p><p dir\="ltr"></p><div><pre>Выберите верные утверждения про блок кода\:<br><br>&lt;div class\="form_wrapper"&gt;<br>  &lt;%\= form_for \:user, url\: login_path, class\: 'signup_form' do |f| %&gt;<br>    &lt;div class\="form_row"&gt;<br>      &lt;%\= label_tag \:email %&gt;<br>      &lt;%\= f.email_field \:email, required\: true %&gt;<br>    &lt;/div&gt;<br>    &lt;div class\="form_row"&gt;<br>      &lt;%\= label_tag \:password %&gt;<br>      &lt;%\= f.password_field \:password, required\: true %&gt;<br>    &lt;/div&gt;<br>    &lt;div class\="form_row"&gt;<br>      &lt;%\= f.submit 'Login' %&gt;<br>    &lt;/div&gt;<br>  &lt;% end %&gt;<br>&lt;/div&gt;</pre></div><br><p></p><br><p></p>{
+	~%50%Параметры, которые отправляет эта форма, выглядят так\:<br>\{"authenticity_token"\=&gt;"[FILTERED]", "user"\=&gt;\{"email"\=&gt;"admin1@example.com", "password"\=&gt;"[FILTERED]"\}, "commit"\=&gt;"Login"\}<br>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">Параметры, которые отправляет эта форма, выглядят так\:<br>\{"authenticity_token"\=&gt;"[FILTERED]", "email"\=&gt;"admin1@example.com", \n"password"\=&gt;"[FILTERED]", "commit"\=&gt;"Login"\}<br></p>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">Так как в input указано </p><pre>required\: true</pre>мы можем быть уверены, что почта и пароль поступят с клиента не пустыми.<br><p></p>
+	~%50%<p dir\="ltr" style\="text-align\: left;">Неизвестно, что будет в параметрах, которые отправит эта форма, а </p><pre>required\: true<br><br></pre><p>нужно только для удобства пользователя.<br></p><br><p></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Active Record Queries
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Active Record Queries
+
+
+// question: 42212  name: Long Query
+::Long Query::[html]<p dir\="ltr" style\="text-align\: left;"></p><pre><code>Выберите верные утверждения\:<br><br>Book.where("created_at &gt;\= \:start_date AND created_at &lt;\= \:end_date",\n  \{start_date\: params[\:start_date], end_date\: params[\:end_date]\})\n</code></pre><br><p></p>{
+	~%50%<p dir\="ltr" style\="text-align\: left;">Этот запрос уязвим к SQL-инъекции<br></p>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">В этом запросе сработают встроенные механизмы фреймворка для защиты от SQL-инъекций.<br></p>
+	~%50%<p dir\="ltr" style\="text-align\: left;">Запрос написан правильно<br></p>
+	~%-50%<p dir\="ltr" style\="text-align\: left;">Запрос написан правильно, но лучше было бы подготовить строку для запроса заранее с помощью конкатенации или интерполяции.<br></p>
+}
+
+
+// question: 42210  name: Запрос 1
+::Запрос 1::[html]<p dir\="ltr" style\="text-align\: left;">Нужно получить все записи пользователя user. Считаем, что в моделях User и Record установлены правильные ассоциации. Выберите все верные варианты.<br></p>{
+	~%33.33333%<p dir\="ltr" style\="text-align\: left;">user.records<br></p>
+	~%33.33333%Record.where(user\: user)<br>
+	~%33.33333%<p dir\="ltr" style\="text-align\: left;">Record.where(user_id\: user.id)<br></p>
+	~%-33.33333%<p dir\="ltr" style\="text-align\: left;">Record.where("user_id \= user.id")<br></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест/Развертывание базы
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест/Развертывание базы
+
+
+// question: 42196  name: Адаптер
+::Адаптер::[html]При смене адаптера для СУБД нужно выполнить следующие действия\:<br>{
+	=<p dir\="ltr" style\="text-align\: left;">Заменить gem адаптера<br>Обновить config/database.yml<br>Развернуть БД в новой СУБД<br>Выполнить тесты<br>Исправить ошибки, если они есть<br></p><p dir\="ltr" style\="text-align\: left;"><br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Это невозможно, замена адаптера не предусмотрена<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Заменить gem адаптера<br>Обновить config/database.yml<br>Обновить связи в моделях<br>Развернуть БД в новой СУБД<br>Выполнить тесты<br>Исправить ошибки, если они есть<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Заменить gem адаптера<br>Обновить Обновить config/routes.yml<br>Развернуть БД в новой СУБД<br>Выполнить тесты<br>Исправить ошибки, если они есть<br></p>
+}
+
+
+// question: 42195  name: Конфигурация
+::Конфигурация::[html]<p dir\="ltr" style\="text-align\: left;">Где предпочтительно хранить данные для доступа к БД?<br></p>{
+	=<p dir\="ltr" style\="text-align\: left;">Для окружений development и test - на локальных машинах разработчиков и тестовом стенде<br>Для окружения production - в переменных окружения сервера или конфигурации&nbsp; CI/СD вне репозитория<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Для всех окружений - в репозитории<br>Для окружения production - в переменных окружения сервера или конфигурации&nbsp; CI/СD вне репозитория<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Для окружений development и test - в репозитории<br>Для окружения production - в переменных окружения сервера или конфигурации&nbsp; CI/СD вне репозитория<br></p>
+	~<p dir\="ltr" style\="text-align\: left;">Для окружений development и test - в переменных окружения<br>Для окружения production - в репозитории<br></p>
+}
+
+
+// question: 42194  name: Скрипт для настройки базы
+::Скрипт для настройки базы::[html]<p dir\="ltr" style\="text-align\: left;">Вы склонировали приложение на Ruby on Rails, в котором уже есть миграции и схема базы данных.<br>Какие команды нужно выполнить, чтобы подготовить БД для приложения (выберите все подходящие варианты)</p>{
+	~%33.33333%<p dir\="ltr" style\="text-align\: left;">rake db\:create<br>rake db\:migrate<br>rake db\:seed<br></p>
+	~%33.33333%<p dir\="ltr" style\="text-align\: left;">rake db\:setup<br></p>
+	~%33.33333%<p dir\="ltr" style\="text-align\: left;">rake db\:create<br>rake db\:\:schema\:load<br>rake db\:seed<br></p>
+	~%-33.33333%<p dir\="ltr" style\="text-align\: left;">rake db\:seed<br>rake db\:create<br></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Тест 2026
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Тест 2026
+
+
+// question: 78473  name: Each-Map
+::Each-Map::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верные утверждения<br></p>{
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Метод .each не меняет исходную коллекцию и не имеет мутирующего варианта<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Метод .each не меняет исходную коллекцию, но имеет мутирующий вариант each!<br></p>
+	=<p dir
+	="ltr" style
+	="text-align\: left;">Метод .map не меняет исходную коллекцию, но имеет мутирующий вариант map!<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Метод .map не меняет исходную коллекцию и не имеет мутирующего варианта<br></p>
+}
+
+
+// question: 78474  name: Hash
+::Hash::[html]<p dir\="ltr" style\="text-align\: left;">Корректный способ задать пустой массив в качестве значения по умолчанию для хэша выглядит так\:<br></p><br></p>\n\~<p dir\="ltr" style\="text-align\: left;">hash \= Hash.new<br>hash.default \= []</p><br><p></p>\n\}{
+	~<p dir
+	="ltr" style
+	="text-align\: left;">hash
+	=Hash.new([])<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">hash
+	=Hash.new(Array.new)<br></p>
+	=<p dir
+	="ltr" style
+	="text-align\: left;">hash
+	=Hash.new \{ []
+}
+
+
+// question: 78490  name: HTTP методы идемпотентность
+::HTTP методы идемпотентность::[html]<p dir\="ltr" style\="text-align\: left;">Какие HTTP методы являются идемпотентными?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">GET<br></p>
+	~%-25%<p dir
+	="ltr" style
+	="text-align\: left;">POST<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">PUT<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">DELETE<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">HEAD<br></p>
+}
+
+
+// question: 78493  name: Include vs Extend
+::Include vs Extend::[html]<p dir\="ltr" style\="text-align\: left;">В чем разница между include и extend в Ruby?<br></p>{
+	~%50%<p dir
+	="ltr" style
+	="text-align\: left;">include добавляет методы модуля как методы экземпляра<br></p>
+	~%50%<p dir
+	="ltr" style
+	="text-align\: left;">extend добавляет методы модуля как методы класса<br></p>
+	~%-50%<p dir
+	="ltr" style
+	="text-align\: left;">include и extend делают одно и то же<br></p>
+	~%-50%<p dir
+	="ltr" style
+	="text-align\: left;">extend используется только для наследования<br></p>
+}
+
+
+// question: 78495  name: Iterators
+::Iterators::[html]<p dir\="ltr" style\="text-align\: left;">Какие итераторы доступны в Ruby?<br></p>{
+	~%20%<p dir
+	="ltr" style
+	="text-align\: left;">each<br></p>
+	~%20%<p dir
+	="ltr" style
+	="text-align\: left;">times<br></p>
+	~%20%<p dir
+	="ltr" style
+	="text-align\: left;">upto<br></p>
+	~%20%<p dir
+	="ltr" style
+	="text-align\: left;">downto<br></p>
+	~%20%<p dir
+	="ltr" style
+	="text-align\: left;">loop<br></p>
+}
+
+
+// question: 78492  name: Lambda vs Proc
+::Lambda vs Proc::[html]<p dir\="ltr" style\="text-align\: left;">В чем разница между lambda и proc в Ruby?<br></p>{
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Lambda проверяет количество аргументов, proc - нет<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">return в lambda возвращает управление из lambda, в proc - из метода<br></p>
+	~%-33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Lambda быстрее proc<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Lambda создается через ->, proc через Proc.new<br></p>
+}
+
+
+// question: 78494  name: Nil проверки
+::Nil проверки::[html]<p dir\="ltr" style\="text-align\: left;">Какие способы проверки на nil существуют в Ruby?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">variable.nil?<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">variable.blank? (из Rails)<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">variable.present? (из Rails)<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">variable&.method (safe navigation operator)<br></p>
+}
+
+
+// question: 78486  name: Rails генераторы
+::Rails генераторы::[html]<p dir\="ltr" style\="text-align\: left;">Какие генераторы есть в Ruby on Rails?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">rails generate model<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">rails generate controller<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">rails generate migration<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">rails generate scaffold<br></p>
+}
+
+
+// question: 78488  name: Rails окружения
+::Rails окружения::[html]<p dir\="ltr" style\="text-align\: left;">Какие окружения есть по умолчанию в Rails приложении?<br></p>{
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">development<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">test<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">production<br></p>
+	~%-33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">staging<br></p>
+}
+
+
+// question: 78485  name: REST методы
+::REST методы::[html]<p dir\="ltr" style\="text-align\: left;">Укажите правильное соответствие CRUD операций и HTTP методов\:<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Create - POST<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Read - GET<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Update - PUT/PATCH<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Delete - DELETE<br></p>
+}
+
+
+// question: 78491  name: REST создание ресурса
+::REST создание ресурса::[html]<p dir\="ltr" style\="text-align\: left;">Какой HTTP метод используется для создания нового ресурса в RESTful API?<br></p>{
+	~<p dir
+	="ltr" style
+	="text-align\: left;">GET<br></p>
+	=<p dir
+	="ltr" style
+	="text-align\: left;">POST<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">PUT<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">PATCH<br></p>
+}
+
+
+// question: 78496  name: String interpolation
+::String interpolation::[html]<p dir\="ltr" style\="text-align\: left;">Какой синтаксис используется для интерполяции строк в Ruby?<br></p>{
+	~<p dir
+	="ltr" style
+	="text-align\: left;">"Hello, \{name\}"<br></p>
+	=<p dir
+	="ltr" style
+	="text-align\: left;">"Hello,#\{name\}"<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">"Hello, $(name)"<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">"Hello, %name%"<br></p>
+}
+
+
+// question: 78476  name: Архитектура
+::Архитектура::[html]<p dir\="ltr" style\="text-align\: left;">Гем реализует функции для работы с графами и с геометрией. Файл lib/silicium.rb выглядит так\:<br><br></p><div><pre>require 'silicium/version'\nmodule Silicium\nclass Error < StandardError; end\nrequire_relative 'geometry'\nrequire_relative 'graph'\nend</pre></div>Выберите верное утверждение.<br><p></p>{
+	=<p dir
+	="ltr" style
+	="text-align\: left;">Это корректная структура файла, логично оставить в нем только базовый класс ошибки и импорты файлов с реализацией логики.<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Это некорректная структура файла, логику гема следовало реализовать в этом же файле.<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Это некорректная структура файла, тесты следовало реализовать в этом же файле.<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Это корректная структура файла, но объявлять свой класс для ошибки не нужно, достаточно использовать StandardError.</p><p></p>
+}
+
+
+// question: 78482  name: Атрибуты класса
+::Атрибуты класса::[html]<p dir\="ltr" style\="text-align\: left;">Что делает <strong>attr_accessor \:name</strong> в классе Ruby?<br></p>{
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Создает геттер для переменной экземпляра @name<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Создает сеттер для переменной экземпляра @name<br></p>
+	~%-33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Создает публичную переменную name<br></p>
+	~%-33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Создает константу NAME<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Эквивалентен определению методов name и name
+	=<br></p>
+}
+
+
+// question: 78478  name: Блоки в Ruby
+::Блоки в Ruby::[html]<p dir\="ltr" style\="text-align\: left;">Что из перечисленного верно про блоки в Ruby?<br></p>{
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Блоки могут принимать аргументы<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Блоки можно передавать методам<br></p>
+	~%-33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Блоки могут быть сохранены в переменные напрямую без преобразования<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Proc и Lambda - это объекты, обертывающие блоки<br></p>
+}
+
+
+// question: 78489  name: Валидации ActiveRecord
+::Валидации ActiveRecord::[html]<p dir\="ltr" style\="text-align\: left;">Какие встроенные валидации есть в ActiveRecord?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">presence<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">uniqueness<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">numericality<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">format<br></p>
+}
+
+
+// question: 78470  name: Классы
+::Классы::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верные утверждения о Ruby<br></p>{
+	~%-50%<p dir
+	="ltr" style
+	="text-align\: left;">Функции в Ruby являются объектами первого класса<br></p>
+	~%-50%<p dir
+	="ltr" style
+	="text-align\: left;">Замыкания в Ruby создают новую область видимости<br></p>
+	~%50%<p dir
+	="ltr" style
+	="text-align\: left;">Для запуска программы на Ruby ее НЕ нужно скомпилировать в бинарный файл<br></p>
+	~%50%Существует способ вызвать приватный метод вне контекста экземпляра класса через метод send<br>
+}
+
+
+// question: 78471  name: Ключи хэшей
+::Ключи хэшей::[html]Какой тип предпочтительнее всего использовать в качестве ключей для Hash?<br>{
+	=<p dir
+	="ltr" style
+	="text-align\: left;">Символы<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Строки<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Целые числа<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Объекты<br></p>
+}
+
+
+// question: 78487  name: Колбеки ActiveRecord
+::Колбеки ActiveRecord::[html]<p dir\="ltr" style\="text-align\: left;">Какие колбеки существуют в ActiveRecord?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">before_save<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">after_create<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">before_validation<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">after_destroy<br></p>
+}
+
+
+// question: 78483  name: Методы Enumerable
+::Методы Enumerable::[html]<p dir\="ltr" style\="text-align\: left;">Какие методы есть в модуле Enumerable в Ruby?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">select<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">reject<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">reduce<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">find<br></p>
+}
+
+
+// question: 78477  name: Методы массивов
+::Методы массивов::[html]<p dir\="ltr" style\="text-align\: left;">Какие методы массива мутируют (изменяют) исходный массив?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">push<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">pop<br></p>
+	~%-25%<p dir
+	="ltr" style
+	="text-align\: left;">map<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">sort!<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">delete<br></p>
+}
+
+
+// question: 78479  name: Методы строк
+::Методы строк::[html]<p dir\="ltr" style\="text-align\: left;">Какие методы изменяют исходную строку?<br></p>{
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">upcase!<br></p>
+	~%-33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">upcase<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">gsub!<br></p>
+	~%-33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">gsub<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">reverse!<br></p>
+}
+
+
+// question: 78481  name: Наследование в Ruby
+::Наследование в Ruby::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верные утверждения о наследовании в Ruby\:<br></p>{
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Ruby поддерживает только одиночное наследование классов<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">Модули позволяют реализовать множественное наследование<br></p>
+	~%-33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">В Ruby нельзя переопределить методы родительского класса<br></p>
+	~%33.33333%<p dir
+	="ltr" style
+	="text-align\: left;">super вызывает метод родительского класса<br></p>
+}
+
+
+// question: 78484  name: Область видимости переменных
+::Область видимости переменных::[html]<p dir\="ltr" style\="text-align\: left;">Какие префиксы используются для переменных в Ruby?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">@ - переменная экземпляра<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">@@ - переменная класса<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">$ - глобальная переменная<br></p>
+	~%-25%<p dir
+	="ltr" style
+	="text-align\: left;">#- локальная переменная<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Отсутствие префикса - локальная переменная<br></p>
+}
+
+
+// question: 78467  name: Почему так можно?
+::Почему так можно?::[html]<p dir\="ltr" style\="text-align\: left;">Возможность написать следующий код<br><br><strong>a \= 1</strong></p><p dir\="ltr"><strong>a \= 'name'<br><br></strong>обусловлена</p><br><p></p>{
+	~<p dir
+	="ltr" style
+	="text-align\: left;">ООП<br></p>
+	=<p dir
+	="ltr" style
+	="text-align\: left;">Динамической типизацией<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Слабой типизацией<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Рефлексией<br></p>
+}
+
+
+// question: 78468  name: Почему так можно? 2
+::Почему так можно? 2::[html]<p dir\="ltr" style\="text-align\: left;">Возможность создавать новые методы классов во время выполнения программы обусловлена<br></p><p></p>{
+	~<p dir
+	="ltr" style
+	="text-align\: left;">ООП<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Динамической типизацией<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Слабой типизацией<br></p>
+	=<p dir
+	="ltr" style
+	="text-align\: left;">Рефлексией<br></p>
+}
+
+
+// question: 78469  name: Почему так можно? 3
+::Почему так можно? 3::[html]<p dir\="ltr" style\="text-align\: left;">Возможность написать следующий код<br><br><strong>class A</strong></p><p dir\="ltr"><strong>def initialize(value \= 0)<br></strong></p><p dir\="ltr"><strong>@value \= value<br></strong></p><p dir\="ltr"><strong>end<br></strong></p><p dir\="ltr"><strong>def add(other)<br>@value +\= other.value<br>end<br></strong></p><p dir\="ltr"><strong>end<br>class B < A<br>end<br><br>a \= A.new<br>b \= B.new(2)</strong></p><p dir\="ltr"><strong>a.add(b)<br></strong>обусловлена</p><br><p></p>{
+	=<p dir
+	="ltr" style
+	="text-align\: left;">ООП<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Динамической типизацией<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Слабой типизацией<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Рефлексией<br></p>
+}
+
+
+// question: 78480  name: Символы vs Строки
+::Символы vs Строки::[html]<p dir\="ltr" style\="text-align\: left;">Чем отличаются символы от строк в Ruby?<br></p>{
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Символы иммутабельны<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Одинаковые символы имеют один object_id<br></p>
+	~%-25%<p dir
+	="ltr" style
+	="text-align\: left;">Символы поддерживают интерполяцию<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Символы занимают меньше памяти при многократном использовании<br></p>
+	~%25%<p dir
+	="ltr" style
+	="text-align\: left;">Символы создаются один раз на все время работы программы<br></p>
+}
+
+
+// question: 78472  name: Статические поля
+::Статические поля::[html]<p dir\="ltr" style\="text-align\: left;">Использование переменных класса <strong>@@my_var </strong>считается не лучшей практикой потому что<br></p>{
+	~%50%<p dir
+	="ltr" style
+	="text-align\: left;">Изменение такой переменной из класса-наследника приводит к сложностям в отладке<br></p>
+	~%-50%<p dir
+	="ltr" style
+	="text-align\: left;">Эффективность программы падает, когда используются переменные класса<br></p>
+	~%50%<p dir
+	="ltr" style
+	="text-align\: left;">Изменение такой переменной из разных потоков приводит к сложностям в отладке<br></p>
+	~%-50%<p dir
+	="ltr" style
+	="text-align\: left;">Rubocop делает замечания при использовании таких переменных<br></p>
+}
+
+
+// question: 78475  name: Строки
+::Строки::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верные утверждения про строки\:<br></p>{
+	~%-50%<p dir
+	="ltr" style
+	="text-align\: left;">Символьные строки нужны для констант и ключей в хешах, строки в " " и ' ' не отличаются<br></p>
+	~%50%<p dir
+	="ltr" style
+	="text-align\: left;">Символьные строки нужны для констант и ключей в хешах, строки в " " нужны для строковой интерполяции, а строки в ' ' ее не поддерживают.<br></p>
+	~%50%<p dir
+	="ltr" style
+	="text-align\: left;">object_id постоянный для символьных строк, а для остальных он может быть "заморожен" с помощью "волшебного комментария" в старых версиях ruby и по умолчанию в новых.<br></p>
+	~%-50%<p dir
+	="ltr" style
+	="text-align\: left;">object_id постоянный для символьных строк, а для остальных он меняется всегда.<br></p>
+}
+
+
+// question: 0  name: Switch category to $course$/top/По умолчанию для CS212. Ruby/Средние
+$CATEGORY: $course$/top/По умолчанию для CS212. Ruby/Средние
+
+
+// question: 78549  name: HABTM vs has_many through
+::HABTM vs has_many through::[html]Основное отличие между `has_and_belongs_to_many` и `has_many through` в ActiveRecord?{
+	=[moodle]HABTM использует таблицу соединений без первичного ключа и модели, в то время как `has_many through` использует полноценную модель
+	~[moodle]В HABTM нельзя добавлять дополнительные атрибуты в таблицу соединений
+	~[moodle]`has_many through` работает только с полиморфными связями
+	~[moodle]HABTM поддерживает `dependent\: \:destroy`, а `has_many through` - нет
+}
+
+
+// question: 78547  name: Вложенные ресурсы
+::Вложенные ресурсы::[html]В каком случае следует использовать вложенные ресурсы (nested resources)?{
+	~%50%[moodle]Когда внутренний ресурс имеет смысл только в контексте внешнего (например, комментарии к статье)
+	~%-50%[moodle]Всегда, когда есть связь между моделями
+	~%50%[moodle]Когда нужны URL вида `/articles/5/comments`
+	~%-50%[moodle]Для улучшения производительности запросов
+}
+
+
+// question: 78513  name: Изменение структуры таблиц
+::Изменение структуры таблиц::Как правильно изменить тип существующей колонки в продакшн-базе с данными?{
+	=Создать новую колонку, перенести данные, удалить старую колонку в отдельной миграции
+	~Использовать `change_column` напрямую - это безопасно в большинстве СУБД
+	~Это нельзя сделать средствами Ruby on Rails, нужно переписывать на Rust
+	~Лучше удалить таблицу и создать заново с нужной структурой
+}
+
+
+// question: 78545  name: Индексы в базе данных
+::Индексы в базе данных::[html]На какие поля таблицы следует добавлять индексы?{
+	~%50%[moodle]На поля, используемые в условиях WHERE, JOIN и ORDER BY
+	~%-50%[moodle]На все поля таблицы для максимальной производительности
+	~%50%[moodle]На внешние ключи (foreign keys) для ускорения связей
+	~%-50%[moodle]Только на поля с уникальными значениями
+}
+
+
+// question: 78544  name: Кэширование в Rails
+::Кэширование в Rails::[html]Какие виды кэширования доступны в Rails из коробки?{
+	~%33.33333%[moodle]Кэширование фрагментов (fragment caching) для частей страниц
+	~%33.33333%[moodle]Кэширование запросов (query caching) в рамках одного запроса
+	~%33.33333%[moodle]Russian Doll caching для вложенных кэшируемых фрагментов
+	~[moodle]Кэширование всей базы данных в оперативной памяти
+}
+
+
+// question: 78508  name: Метод includes
+::Метод includes::Сколько запросов выполнит `Post.includes(\:comments).where(published\: true)`?{
+	=Один запрос для загрузки постов и один запрос для загрузки всех связанных комментариев (2 запроса)
+	~Один запрос с JOIN между posts и comments
+	~Ответ зависит от числа постов и комментариев
+	~Ответ зависит только от числа постов
+}
+
+
+// question: 78543  name: Метод respond_to
+::Метод respond_to::[html]Для чего используется метод `respond_to` в контроллерах Rails?{
+	=[moodle]Для обработки запросов с разными форматами (HTML, JSON, XML) в одном action
+	~[moodle]Для валидации входящих параметров запроса
+	~[moodle]Для авторизации запроса клиента
+	~[moodle]Для определения, какой метод контроллера вызывать
+}
+
+
+// question: 78535  name: Методы pluck и select
+::Методы pluck и select::[html]Выберите верные утверждения про `pluck(\:id)` и `select(\:id)`?{
+	~%33.33333%[moodle]`pluck` немедленно выполняет запрос и возвращает массив значений, `select` возвращает ActiveRecord\:\:Relation для дальнейшей цепочки
+	~%33.33333%[moodle]`pluck` не загружает объекты моделей в память, `select` загружает
+	~%-33.33333%[moodle]`pluck` можно использовать только с полем `id`, `select` - с любыми полями
+	~%33.33333%[moodle]`pluck` в общем случае работает быстрее
+}
+
+
+// question: 78534  name: Обязанности контроллера
+::Обязанности контроллера::[html]Что НЕ является обязанностью контроллера в Rails?{
+	~%33.33333%[moodle]Генерация сложных SQL-запросов и оптимизация работы с базой данных
+	~%33.33333%[moodle]Прямая работа с файловой системой или внешними API
+	~%-33.33333%[moodle]Обработка параметров запроса
+	~%33.33333%[moodle]Валидация данных
+}
+
+
+// question: 78533  name: Обязанности модели
+::Обязанности модели::[html]Что является обязанностями модели в Rails?{
+	~%33.33333%[moodle]Валидация данных перед сохранением в базу
+	~%33.33333%[moodle]Определение связей (ассоциаций) с другими моделями
+	~%-33.33333%[moodle]Генерация HTML для представлений
+	~%33.33333%[moodle]Инкапсуляция бизнес-логики и правил домена
+}
+
+
+// question: 78532  name: Опция dependent: :destroy
+::Опция dependent\: \:destroy::[html]Что произойдёт при удалении родительской записи с опцией `dependent\: \:destroy`?{
+	~%50%[moodle]Все связанные записи будут удалены с вызовом их колбэков `before_destroy` и `after_destroy`
+	~%-50%[moodle]Связанные записи останутся в базе, но их внешний ключ будет установлен в NULL
+	~%-50%[moodle]Удаление родителя будет отменено, если есть связанные записи
+	~%50%[moodle]При удалении связанных записей будут выполнены те же проверки и валидации, что и при обычном удалении
+}
+
+
+// question: 78530  name: Партиалы (partials)
+::Партиалы (partials)::[html]Когда следует использовать партиалы в Rails представлениях?{
+	~%50%[moodle]Для переиспользуемых компонентов интерфейса
+	~%-50%[moodle]Для каждого элемента в цикле `each`
+	~%50%[moodle]Для разделения сложных представлений на логические части
+	~%-50%[moodle]Только для элементов, которые используются на нескольких разных страницах
+}
+
+
+// question: 78529  name: Полиморфные ассоциации
+::Полиморфные ассоциации::[html]В каком случае следует использовать полиморфную ассоциацию?{
+	~%50%[moodle]Когда одна модель может принадлежать нескольким разным типам моделей
+	~%-50%[moodle]Когда нужно создать связь "многие-ко-многим"
+	~%-50%[moodle]Когда нужно реализовать наследование таблиц в базе данных
+	~%50%[moodle]Когда разные модели могут иметь одни и те же связанные объекты, например, комментарии к разным типам контента
+}
+
+
+// question: 78507  name: Проблема N+1
+::Проблема N+1::Что такое проблема N+1 запросов и как её решить?{
+	=Это выполнение 1 запроса для основной коллекции и N запросов для загрузки ассоциаций, решается с помощью `includes` или `eager_load`
+	~Это отсутствие индексов на внешних ключах, решается добавлением индексов
+	~Это проблема производительности в больших таблицах, решается пагинацией
+	~Это проблема, возникающая при отладке большого числа колбеков
+}
+
+
+// question: 78527  name: Разделение ответственности
+::Разделение ответственности::[html]В какой компонент MVC допустимо выносить сложную бизнес-логику, которая затрагивает несколько моделей?{
+	~%33.33333%[moodle]В сервисные объекты (Service Objects)
+	~%-33.33333%[moodle]В контроллеры, поскольку они управляют потоком данных
+	~%33.33333%[moodle]В модели, поскольку они содержат бизнес-логику
+	~%33.33333%[moodle]В фоновые задачи (ActiveJob), если операция длительная
+}
+
+
+// question: 78526  name: Сервисные объекты
+::Сервисные объекты::[html]В каком случае имеет смысл создавать сервисный объект?{
+	~%33.33333%[moodle]Когда операция затрагивает несколько моделей и не относится к одной конкретной
+	~%33.33333%[moodle]Когда нужно выполнить сложную транзакцию с несколькими шагами
+	~%-33.33333%[moodle]Для простых CRUD-операций (создание, чтение, обновление, удаление)
+	~%33.33333%[moodle]Когда требуется интеграция с внешним API или сервисом
+}
+
+
+// question: 78525  name: Структура миграций
+::Структура миграций::[html]Когда следует использовать `up`/`down` методы вместо `change` в миграциях?{
+	~%50%[moodle]Когда миграция содержит операции, которые не могут быть автоматически обращены (например, удаление данных)
+	~%-50%[moodle]Всегда, поскольку это даёт больший контроль над процессом миграции
+	~%50%[moodle]Для сложных миграций с условной логикой или SQL-выражениями
+	~%-50%[moodle]Никогда, метод `change` всегда предпочтительнее и безопаснее
+}
+
+
+// question: 78499  name: Транзакции
+::Транзакции::[html]<p dir\="ltr" style\="text-align\: left;">Выберите верное утверждение<br></p>{
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Миграции не выполняются в транзакции по умолчанию, но транзакцию можно открыть явно.<br></p>
+	=<p dir
+	="ltr" style
+	="text-align\: left;">Миграции выполняются в транзакции по умолчанию, если СУБД поддерживает такую возможность.<br></p>
+	~<p dir
+	="ltr" style
+	="text-align\: left;">Миграции не выполняются в транзакции по умолчанию и открыть транзакцию нельзя.<br></p>
+	~Миграции выполняются в транзакции по умолчанию, если выполняется последовательность миграций, то она будет упакована в общую транзакцию.<br>
+}
+
+
+// question: 78519  name: Транзакции и целостность данных
+::Транзакции и целостность данных::Как можно обеспечить атомарность операции обновления баланса пользователя при списании средств?{
+	=Обернуть операцию в `ActiveRecord\:\:Base.transaction` блок
+	=Использовать `lock` для пессимистической блокировки записи
+	~Довериться встроенным механизмам базы данных - они гарантируют атомарность
+	=Использовать оптимистическую блокировку с полем `lock_version`
+}
+
+
+// question: 78515  name: Фильтры контроллера
+::Фильтры контроллера::Какие типы фильтров (filters) существуют в Rails контроллерах?{
+	=`before_action`
+	=`after_action`
+	=`around_action`
+	~`during_action`
+}
+
+
+// question: 78520  name: Фоновые задачи
+::Фоновые задачи::Когда следует использовать фоновые задачи (ActiveJob, Sidekiq)?{
+	=Для отправки email-уведомлений пользователям
+	=Для обработки загруженных файлов (изображений, документов)
+	=Для интеграции с внешними API с потенциально долгим ответом
+	~Для всех операций с базой, чтобы не блокировать основной поток приложения
+}
+
+
+// question: 78518  name: Оптимизация запросов с ассоциациями
+::Оптимизация запросов с ассоциациями::Как оптимизировать следующий код для избежания проблемы N+1? (Нужно выбрать все подходящие варианты)\n```ruby\nPost.where(published\: true).each do |post|\nputs "Автор\: \#"\nputs "Комментариев\: \#\{post.comments.count\}"\nend\n```\{\n\=Использовать `includes(\:author, \:comments)` для предзагрузки ассоциаций\n\=Использовать `counter_cache` для подсчёта комментариев\n\~Использовать `joins(\:author, \:comments)` вместо `includes`\n\=Сделать отдельный запрос для подсчёта комментариев с группировкой\n\}{
+	=%100%post.author.name#
+}
+
+
