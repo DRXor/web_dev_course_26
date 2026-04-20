@@ -1,3 +1,5 @@
+require 'matrix_library'
+
 def parse_matrix(str)
   raise ArgumentError, "Пустая строка" if str.nil? || str.strip.empty?
 

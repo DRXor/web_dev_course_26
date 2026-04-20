@@ -204,6 +204,10 @@ class Matrix
     @data.map { |row| row.join("\t")}.join("\n")
   end
 
+  def to_a
+    @data.map(&:dup)
+  end
+
   def ==(other)
     return false unless other.is_a?(Matrix) && @rows == other.rows && @cols == other.cols
     

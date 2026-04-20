@@ -1,4 +1,4 @@
-require_relative '../parser'
+require_relative '../parsers/parser'
 require 'matrix_library'
 
 RSpec.describe 'Parser' do

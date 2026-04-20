@@ -1,4 +1,5 @@
 require 'matrix_library'
+require_relative '../services/matrix_service'
 
 RSpec.describe Matrix do
   it 'складывает матрицы корректно' do 
