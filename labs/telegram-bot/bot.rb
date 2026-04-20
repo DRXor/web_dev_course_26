@@ -8,3 +8,9 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
     MatrixHandler.call(message, bot)
   end
 end
+
+Thread.new do
+  require 'webrick'
+  server = WEBrick::HTTPServer.new(Port: ENV['PORT'] || 3000)
+  server.start
+end
