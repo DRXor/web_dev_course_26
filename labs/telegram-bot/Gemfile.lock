@@ -1,5 +1,5 @@
 PATH
-  remote: ../ruby-matrix-library
+  remote: matrix_library
   specs:
     matrix_library (0.1.0)
 

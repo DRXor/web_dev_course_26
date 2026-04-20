@@ -2,6 +2,6 @@ source 'https://rubygems.org'
 
 gem 'telegram-bot-ruby'
 
-gem 'matrix_library', path: './matrix-library'
+gem 'matrix_library', path: './matrix_library'
 gem 'rspec'
 gem 'dotenv'
