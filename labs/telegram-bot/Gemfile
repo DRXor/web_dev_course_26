@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'telegram-bot-ruby'
+
+gem 'matrix_library', path: '../ruby-matrix-library'
+gem 'rspec'
