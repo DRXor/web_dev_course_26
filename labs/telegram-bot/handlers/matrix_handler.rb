@@ -7,26 +7,25 @@ class MatrixHandler
   @state = {}
 
   def self.main_keyboard
-    Telegram::Bot::Types::ReplyKeyboardMarkup.new(
-      keyboard:[ 
+    Telegram::Bot::Types::InlineKeyboardMarkup.new(
+      inline_keyboard: [
         [
-          Telegram::Bot::Types::KeyboardButton.new(text: '/add') ,
-          Telegram::Bot::Types::KeyboardButton.new(text: '/mul') 
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: "Сложить", callback_data: "add"),
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: "Умножить", callback_data: "mul")
         ],
         [
-          Telegram::Bot::Types::KeyboardButton.new(text: '/sub') ,
-          Telegram::Bot::Types::KeyboardButton.new(text: '/det') 
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: "Вычесть", callback_data: "sub"),
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: "Определитель", callback_data: "det")
         ],
         [
-          Telegram::Bot::Types::KeyboardButton.new(text: '/inv') ,
-          Telegram::Bot::Types::KeyboardButton.new(text: '/transpose') 
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: "Обратная", callback_data: "inv"),
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: "Транспонировать", callback_data: "transpose")
         ],
         [
-          Telegram::Bot::Types::KeyboardButton.new(text: '/trace') ,
-          Telegram::Bot::Types::KeyboardButton.new(text: '/sym') 
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: "След", callback_data: "trace"),
+          Telegram::Bot::Types::InlineKeyboardButton.new(text: "Симметрична?", callback_data: "sym")
         ]
-      ],
-      resize_keyboard: true
+      ]
     )
   end
 
@@ -39,75 +38,68 @@ class MatrixHandler
       bot.api.send_message(
         chat_id: chat_id,
         text: "Привет! Я бот для работы с матрицами \n\nВыбери операцию:",
-        reply_markup: self.main_keyboard
+        reply_markup: self.main_keyboard,
+        parse_mode: 'MarkdownV2'
       )
 
-    when '/add'
-      @state[chat_id] = :add
-      bot.api.send_message(chat_id: chat_id, text: "Формат:\n1,2;3,4 | 5,6;7,8")
+    when '/add', '/mul', '/sub', '/det', '/inv', '/transpose', '/trace', '/sym'
+      operation = text[1..-1]
+      @state[chat_id] = operation.to_sym
 
-    when '/mul'
-      @state[chat_id] = :mul
-      bot.api.send_message(chat_id: chat_id, text: "Формат:\n1,2;3,4 | 5,6;7,8")
+      examples = {
+        add:  "1,2;3,4 | 5,6;7,8",
+        mul:  "1,2;3,4 | 5,6;7,8",
+        sub:  "1,2;3,4 | 5,6;7,8",
+        det:  "1,2;3,4",
+        inv:  "1,2;3,4",
+        transpose: "1,2;3,4",
+        trace: "1,2;3,4",
+        sym:  "1,2;3,4"
+      }
 
-    when '/det'
-      @state[chat_id] = :det
-      bot.api.send_message(chat_id: chat_id, text: "Формат:\n1,2;3,4")
-
-    when '/sub'
-      @state[chat_id] = :sub
-      bot.api.send_message(chat_id: chat_id, text: "Формат:\n1,2;3,4 | 5,6;7,8")
-
-    when '/inv'
-      @state[chat_id] = :inv
-      bot.api.send_message(chat_id: chat_id, text: "Формат:\n1,2;3,4")
-
-    when '/transpose'
-      @state[chat_id] = :transpose
-      bot.api.send_message(chat_id: chat_id, text: "Формат:\n1,2;3,4")
-
-    when '/trace'
-      @state[chat_id] = :trace
-      bot.api.send_message(chat_id: chat_id, text: "Формат:\n1,2;3,4")
-
-    when '/sym'
-      @state[chat_id] = :sym
-      bot.api.send_message(chat_id: chat_id, text: "Формат:\n1,2;3,4")
+      bot.api.send_message(
+        chat_id: chat_id,
+        text: "Отправь матрицу(ы) в формате:\n`#{examples[operation.to_sym]}`",
+        parse_mode: 'MarkdownV2'
+      )
 
     when /^(.+)\|(.+)$/
-      a = parse_matrix($1)
-      b = parse_matrix($2)
+      a = parse_matrix($1.strip)
+      b = parse_matrix($2.strip)
 
       mode = @state[chat_id]
-      result = 
-        case mode
-        when :add then MatrixService.add(a, b)
-        when :sub then  MatrixService.sub(a, b)
-        when :mul then MatrixService.mul(a, b)
-        else raise "Не выбрана операция"
-        end
-      bot.api.send_message(chat_id: chat_id, text: "Результат:\n#{result}")
+      result = case mode
+               when :add then MatrixService.add(a, b)
+               when :sub then MatrixService.sub(a, b)
+               when :mul then MatrixService.mul(a, b)
+               else raise "Не выбрана операция"
+               end
+
+      send_matrix_result(bot, chat_id, result)
 
     when /^[0-9,;\s]+$/
       a = parse_matrix(text)
 
       mode = @state[chat_id]
-      result = 
-        case mode
-        when :det then MatrixService.det(a)
-        when :inv then MatrixService.inv(a)
-        when :transpose then MatrixService.transpose(a)
-        when :trace then MatrixService.trace(a)
-        when :sym then MatrixService.symmetric?(a)
-        else 
-          raise "Выбери операцию"
-        end
+      result = case mode
+               when :det then MatrixService.det(a)
+               when :inv then MatrixService.inv(a)
+               when :transpose then MatrixService.transpose(a)
+               when :trace then MatrixService.trace(a)
+               when :sym then MatrixService.symmetric?(a) ? "Да, матрица симметрична" : "Нет, матрица не симметрична"
+               else raise "Не выбрана операция"
+               end
 
-        bot.api.send_message(chat_id: chat_id, text: "Результат:\n#{result}")
+      send_matrix_result(bot, chat_id, result)
+
+    else
+      bot.api.send_message(chat_id: chat_id, text: "Неизвестная команда. Нажми /start")
     end
 
   rescue => e
-    bot.api.send_message(chat_id: message.chat.id, text: "Ошибка: #{e.message}")
+    bot.api.send_message(
+      chat_id: chat_id,
+      text: "Ошибка: #{e.message}"
+    )
   end
 end
-
