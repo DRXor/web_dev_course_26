@@ -17,43 +17,76 @@ end
 
 puts "TOKEN loaded successfully"
 
-# Set webhook
-bot = Telegram::Bot::Client.new(TOKEN)
-webhook_url = "#{RENDER_HOST}/webhook"
+IS_RENDER = ENV['RENDER'] == 'true' || ENV.key?('RENDER')
 
-begin
-  response = bot.set_webhook(url: webhook_url)
+if IS_RENDER
+  puts "=== Running in WEBHOOK mode (Render) ==="
   
-  if response == true
-    puts "Webhook set successfully"
-  else
-    puts "Webhook response: #{response.inspect}"
+  # Set webhook
+  bot = Telegram::Bot::Client.new(TOKEN)
+  webhook_url = "#{RENDER_HOST}/webhook"
+  
+  begin
+    response = bot.set_webhook(url: webhook_url)
+    
+    if response == true
+      puts "Webhook set successfully"
+    else
+      puts "Webhook response: #{response.inspect}"
+    end
+  rescue => e
+    puts "Error while setting webhook: #{e.message}"
   end
-rescue => e
-  puts "Error while setting webhook: #{e.message}"
-end
+  
+  puts "=== Bot started successfully and listening for webhooks ==="
+  puts "Render hostname: #{RENDER_HOST.gsub('https://', '')}"
+  
+  # Sinatra webhook endpoint
+  set :port, 3000
+  
+  post '/webhook' do
+    request.body.rewind
+    update = JSON.parse(request.body.read)
+    
+    bot = Telegram::Bot::Client.new(TOKEN)
+    
+    if update['message']
+      chat_id = update['message']['chat']['id']
+      text = update['message']['text']
 
-puts "=== Bot started successfully and listening for webhooks ==="
-puts "Render hostname: #{RENDER_HOST.gsub('https://', '')}"
-
-set :port, 3000
-
-post '/webhook' do
-  request.body.rewind
-  update = JSON.parse(request.body.read)
+      response_text = "Echo: #{text}"
+      
+      bot.api.send_message(
+        chat_id: chat_id,
+        text: response_text
+      )
+    end
+    
+    status 200
+    body ''
+  end
+else
+  puts "=== Running in POLLING mode (Local development) ==="
+  puts "Bot started. Press Ctrl+C to stop"
   
   bot = Telegram::Bot::Client.new(TOKEN)
   
-  if update['message']
-    chat_id = update['message']['chat']['id']
-    text = update['message']['text']
-    
-    bot.api.send_message(
-      chat_id: chat_id,
-      text: "Echo: #{text}"
-    )
+  bot.listen do |message|
+    begin
+      puts "Received message from #{message.from.first_name}: #{message.text}"
+
+      response_text = "Echo: #{message.text}"
+      
+      bot.api.send_message(
+        chat_id: message.chat.id,
+        text: response_text
+      )
+    rescue => e
+      puts "Error processing message: #{e.message}"
+      bot.api.send_message(
+        chat_id: message.chat.id,
+        text: "Sorry, an error occurred: #{e.message}"
+      )
+    end
   end
-  
-  status 200
-  body ''
 end
