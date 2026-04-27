@@ -8,7 +8,7 @@ require_relative '../controllers/matrix_controller'
 $stdout.sync = true
 STDOUT.sync = true
 
-puts "=== Matrix Bot starting on Render ==="
+puts "=== Matrix Bot starting on Render (Webhook mode) ==="
 
 TOKEN = ENV['TELEGRAM_BOT_TOKEN']
 
@@ -21,8 +21,7 @@ puts "TOKEN loaded successfully"
 
 bot = Telegram::Bot::Client.new(TOKEN)
 
-WEBHOOK_PATH = "/#{TOKEN}"
-WEBHOOK_URL = "https://#{ENV['RENDER_EXTERNAL_HOSTNAME']}#{WEBHOOK_PATH}"
+WEBHOOK_URL = "https://#{ENV['RENDER_EXTERNAL_HOSTNAME']}/webhook"
 
 puts "Setting webhook to: #{WEBHOOK_URL}"
 
@@ -30,41 +29,37 @@ begin
   response = bot.api.set_webhook(
     url: WEBHOOK_URL,
     allowed_updates: %w[message callback_query],
-    drop_pending_updates: true  
+    drop_pending_updates: true
   )
 
-  if response['ok']
-    puts "Webhook successfully set!"
+  if response['ok'] == true || response == true
+    puts "Webhook successfully set to #{WEBHOOK_URL}"
   else
-    puts "Failed to set webhook: #{response}"
+    puts "Failed to set webhook: #{response.inspect}"
   end
 rescue => e
-  puts "Error setting webhook: #{e.message}"
-  puts e.backtrace
+  puts "Error while setting webhook: #{e.message}"
+  puts e.backtrace.join("\n")
 end
 
-#Sinatra приложение
-
+#  Sinatra 
 set :port, ENV['PORT'] || 10000
 set :environment, :production
-set :logging, true
 
 get '/health' do
-  content_type :text
-  "OK - Matrix Bot is running"
+  "OK - Matrix Bot is running via webhook"
 end
 
 get '/' do
-  "Matrix Bot is alive! Webhook active."
+  "Matrix Telegram Bot is alive!<br>Webhook: /webhook"
 end
 
-# Основной маршрут для Telegram Webhook
-post WEBHOOK_PATH do
+post '/webhook' do
   begin
     update_body = request.body.read
     update = Telegram::Bot::Types::Update.new(JSON.parse(update_body))
 
-    puts "Received update: #{update.class} (#{Time.now})"
+    puts "[#{Time.now}] Received update: #{update.class}"
 
     controller = MatrixController.new(bot)
     controller.handle(update)
@@ -72,12 +67,12 @@ post WEBHOOK_PATH do
     status 200
     body 'OK'
   rescue => e
-    puts "ERROR processing update: #{e.message}"
-    puts e.backtrace
-    status 200
+    puts "[ERROR] #{e.message}"
+    puts e.backtrace.join("\n")
+    status 200    
     body 'OK'
   end
 end
 
-puts "=== Bot is ready and listening for webhooks on #{WEBHOOK_URL} ==="
-puts "Render external hostname: #{ENV['RENDER_EXTERNAL_HOSTNAME']}"
+puts "=== Bot started successfully and listening for webhooks ==="
+puts "Render hostname: #{ENV['RENDER_EXTERNAL_HOSTNAME']}"
