@@ -2,7 +2,6 @@ require_relative '../services/matrix_service'
 require_relative '../parsers/parser'
 require 'telegram/bot'
 
-
 class MatrixHandler
   @state = {}
 
@@ -37,8 +36,8 @@ class MatrixHandler
     when '/start'
       bot.api.send_message(
         chat_id: chat_id,
-        text: "Привет! Я бот для работы с матрицами \n\nВыбери операцию:",
-        reply_markup: self.main_keyboard,
+        text: "Привет! Я бот для работы с матрицами.\n\nВыбери операцию:",
+        reply_markup: main_keyboard,
         parse_mode: 'MarkdownV2'
       )
 
@@ -99,7 +98,36 @@ class MatrixHandler
   rescue => e
     bot.api.send_message(
       chat_id: chat_id,
-      text: "Ошибка: #{e.message}"
+      text: "Ошибка: #{e.message}",
+      parse_mode: nil 
     )
+  end
+
+  def self.send_matrix_result(bot, chat_id, result)
+    if result.is_a?(Array) || result.is_a?(Matrix) || 
+       (result.respond_to?(:to_a) && result.to_a.is_a?(Array))
+
+      matrix_text = format_matrix(result)
+      text = "Результат:\n```matrix\n#{matrix_text}\n```"
+    else
+      text = "Результат:\n```\n#{result}\n```"
+    end
+
+    bot.api.send_message(
+      chat_id: chat_id,
+      text: text,
+      parse_mode: 'MarkdownV2'
+    )
+  end
+
+  def self.format_matrix(matrix)
+    rows = matrix.to_a
+    col_widths = rows.transpose.map { |col| col.map(&:to_s).map(&:length).max }
+
+    rows.map do |row|
+      row.each_with_index.map do |val, i|
+        val.to_s.rjust(col_widths[i])
+      end.join("  ")
+    end.join("\n")
   end
 end
