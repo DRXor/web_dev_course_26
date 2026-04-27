@@ -28,11 +28,11 @@ if IS_RENDER
   
   begin
     response = bot.api.set_webhook(url: webhook_url)
-    
-    if response['ok']
-      puts "Webhook set successfully: #{response['description']}"
+
+    if response == true
+      puts "Webhook set successfully"
     else
-      puts "Webhook response: #{response.inspect}"
+      puts "Webhook failed: #{response.inspect}"
     end
   rescue => e
     puts "Error while setting webhook: #{e.message}"
