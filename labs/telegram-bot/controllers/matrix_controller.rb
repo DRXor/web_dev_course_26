@@ -86,15 +86,6 @@ class MatrixController
     end
   end
 
-  def send_message(chat_id, text, keyboard = nil, markdown = false)
-    @bot.api.send_message(
-      chat_id: chat_id,
-      text: text,
-      reply_markup: keyboard,
-      parse_mode: (markdown ? 'Markdown' : nil)
-    )
-  end
-
   def edit_message(chat_id, message_id, text, keyboard = nil)
     @bot.api.edit_message_text(
       chat_id: chat_id,
@@ -102,6 +93,10 @@ class MatrixController
       text: text,
       reply_markup: keyboard
     )
+  end
+
+  def process(text)
+    "Обработано: #{text}"
   end
 end
 

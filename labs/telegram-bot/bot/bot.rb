@@ -12,6 +12,7 @@ puts "=== Matrix Bot starting on Render (Webhook mode) ==="
 
 if TOKEN.nil?
   puts "ERROR: TOKEN not set!"
+  puts "Make sure TELEGRAM_BOT_TOKEN is set in Render Environment Variables"
   exit 1
 end
 
@@ -50,31 +51,36 @@ if IS_RENDER
     
     begin
       request.body.rewind
-      update = JSON.parse(request.body.read)
+      update_data = JSON.parse(request.body.read)
       
       bot = Telegram::Bot::Client.new(TOKEN)
       
-      if update['message']
-        chat_id = update['message']['chat']['id']
-        text = update['message']['text']
-        
-        puts "Received message: #{text} from #{chat_id}"
-        
-        matrix_controller = MatrixController.new
-        response_text = matrix_controller.process(text)
-        
-        response_text = "Echo: #{text}"
-        
-        bot.api.send_message(
-          chat_id: chat_id,
-          text: response_text
-        )
-      end
+      update = OpenStruct.new(
+        message: update_data['message'] ? OpenStruct.new(
+          chat: OpenStruct.new(id: update_data['message']['chat']['id']),
+          text: update_data['message']['text'],
+          from: OpenStruct.new(
+            first_name: update_data['message']['from']['first_name'],
+            id: update_data['message']['from']['id']
+          )
+        ) : nil,
+        callback_query: update_data['callback_query'] ? OpenStruct.new(
+          data: update_data['callback_query']['data'],
+          message: OpenStruct.new(
+            chat: OpenStruct.new(id: update_data['callback_query']['message']['chat']['id']),
+            message_id: update_data['callback_query']['message']['message_id']
+          )
+        ) : nil
+      )
+      
+      matrix_controller = MatrixController.new(bot)
+      matrix_controller.handle(update)
       
       status 200
       body ''
     rescue => e
       puts "Webhook error: #{e.message}"
+      puts e.backtrace
       status 200 
       body ''
     end
@@ -89,17 +95,17 @@ else
     begin
       puts "Received message from #{message.from.first_name}: #{message.text}"
       
-      matrix_controller = MatrixController.new
-      response_text = matrix_controller.process(message.text)
-      
-      response_text = "Echo: #{message.text}"
-      
-      bot.api.send_message(
-        chat_id: message.chat.id,
-        text: response_text
+      update = OpenStruct.new(
+        message: message,
+        callback_query: nil
       )
+      
+      matrix_controller = MatrixController.new(bot)
+      matrix_controller.handle(update)
+      
     rescue => e
       puts "Error processing message: #{e.message}"
+      puts e.backtrace
       bot.api.send_message(
         chat_id: message.chat.id,
         text: "Sorry, an error occurred: #{e.message}"
