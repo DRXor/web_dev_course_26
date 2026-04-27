@@ -1,4 +1,4 @@
-require '../matrix_library/lib/matrix_library.rb'
+require 'matrix_library'
 
 def parse_matrix(str)
    def self.parse(str)

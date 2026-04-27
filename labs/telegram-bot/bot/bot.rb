@@ -1,6 +1,10 @@
 require 'telegram/bot'
 require_relative '../controllers/matrix_controller'
 require 'webrick'
+require 'dotenv/load'
+
+$LOAD_PATH << File.expand_path('../matrix_library/lib', __dir__)
+$LOAD_PATH << File.expand_path('..', __dir__)
 
 Thread.new do
   server = WEBrick::HTTPServer.new(
