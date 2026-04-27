@@ -5,74 +5,55 @@ require 'json'
 
 require_relative '../controllers/matrix_controller'
 
-$stdout.sync = true
-STDOUT.sync = true
+TOKEN = ENV['TOKEN']
+RENDER_HOST = "https://matrix-telegram-bot-aroi.onrender.com"
 
 puts "=== Matrix Bot starting on Render (Webhook mode) ==="
 
-TOKEN = ENV['TELEGRAM_BOT_TOKEN']
-
-if TOKEN.nil? || TOKEN.empty?
-  puts "ERROR: TELEGRAM_BOT_TOKEN is not set!"
+if TOKEN.nil?
+  puts "ERROR: TOKEN not set!"
   exit 1
 end
 
 puts "TOKEN loaded successfully"
 
+# Set webhook
 bot = Telegram::Bot::Client.new(TOKEN)
-
-WEBHOOK_URL = "https://#{ENV['RENDER_EXTERNAL_HOSTNAME']}/webhook"
-
-puts "Setting webhook to: #{WEBHOOK_URL}"
+webhook_url = "#{RENDER_HOST}/webhook"
 
 begin
-  response = bot.api.set_webhook(
-    url: WEBHOOK_URL,
-    allowed_updates: %w[message callback_query],
-    drop_pending_updates: true
-  )
-
-  if response['ok'] == true || response == true
-    puts "Webhook successfully set to #{WEBHOOK_URL}"
+  response = bot.set_webhook(url: webhook_url)
+  
+  if response == true
+    puts "Webhook set successfully"
   else
-    puts "Failed to set webhook: #{response.inspect}"
+    puts "Webhook response: #{response.inspect}"
   end
 rescue => e
   puts "Error while setting webhook: #{e.message}"
-  puts e.backtrace.join("\n")
-end
-
-#  Sinatra 
-set :port, ENV['PORT'] || 10000
-set :environment, :production
-
-get '/health' do
-  "OK - Matrix Bot is running via webhook"
-end
-
-get '/' do
-  "Matrix Telegram Bot is alive!<br>Webhook: /webhook"
-end
-
-post '/webhook' do
-  begin
-    update_body = request.body.read
-    update = Telegram::Bot::Types::Update.new(JSON.parse(update_body))
-
-    puts "[#{Time.now}] Received update: #{update.class}"
-
-    controller = MatrixController.new(bot)
-    controller.handle(update)
-
-    status 200
-    body 'OK'
-  rescue => e
-    puts "[ERROR] #{e.message}"
-    puts e.backtrace.join("\n")
-    status 200    
-    body 'OK'
-  end
 end
 
 puts "=== Bot started successfully and listening for webhooks ==="
-puts "Render hostname: #{ENV['RENDER_EXTERNAL_HOSTNAME']}"
+puts "Render hostname: #{RENDER_HOST.gsub('https://', '')}"
+
+set :port, 3000
+
+post '/webhook' do
+  request.body.rewind
+  update = JSON.parse(request.body.read)
+  
+  bot = Telegram::Bot::Client.new(TOKEN)
+  
+  if update['message']
+    chat_id = update['message']['chat']['id']
+    text = update['message']['text']
+    
+    bot.api.send_message(
+      chat_id: chat_id,
+      text: "Echo: #{text}"
+    )
+  end
+  
+  status 200
+  body ''
+end
