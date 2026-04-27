@@ -1,26 +1,37 @@
 require 'matrix_library'
 
 def parse_matrix(str)
-   def self.parse(str)
-    raise ArgumentError, "Пустая строка" if str.nil? || str.strip.empty?
+  raise ArgumentError, "Пустая строка" if str.nil? || str.strip.empty?
 
-    rows = str.strip.split(';').map do |row|
-      nums = row.split(',').map(&:strip)
+  normalized = str.encode("UTF-8", invalid: :replace, undef: :replace)
+                  .gsub("\u00A0", " ")
+                  .gsub(/\s+/, " ")
+                  .strip
 
-      raise ArgumentError, "Пустая строка" if nums.empty?
+  rows = normalized.split(';').map do |row|
+    nums = row
+       .split(',')
+       .reject(&:empty?)
+       .map(&:strip) 
 
-      nums.map do |num|
-        Float(num)
-      rescue
-        raise ArgumentError, "Неверное число: #{num}"
-      end
+    if nums.empty?
+      raise ArgumentError, "Пустая строка в матрице"
     end
 
-    size = rows.first.size
-    unless rows.all? { |r| r.size == size }
-      raise ArgumentError, "Строки разной длины"
+    nums.map do |num|
+      Integer(num)
+    rescue ArgumentError
+      raise ArgumentError, "Неверное число: #{num.inspect}"
     end
-
-    Matrix.new(rows)
   end
+
+  raise ArgumentError, "Пустая матрица" if rows.empty?
+
+  size = rows.first.size
+  
+  unless rows.all? { |r| r.size == size }
+    raise ArgumentError, "Строки разной длины"
+  end
+
+  Matrix.new(rows)
 end
