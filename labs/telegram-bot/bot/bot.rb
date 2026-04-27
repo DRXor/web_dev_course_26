@@ -20,19 +20,15 @@ Thread.new do
   server.start
 end
 
-
 TOKEN = ENV['TELEGRAM_BOT_TOKEN']
+controller = MatrixController.new(nil)
 
 Telegram::Bot::Client.run(TOKEN) do |bot|
-  controller = MatrixController.new(bot)
-
   bot.listen do |update|
-    controller.handle(update)
+    begin
+      controller.handle(update)
+    rescue => e
+      puts "ERROR: #{e.message}"
+    end
   end
-end
-
-Thread.new do
-  require 'webrick'
-  server = WEBrick::HTTPServer.new(Port: ENV['PORT'] || 3000)
-  server.start
 end
