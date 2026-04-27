@@ -21,7 +21,7 @@ class MatrixController
     @bot = bot
   end
 
-  def handle(message)
+  def handle(update)
     if update.is_a?(Telegram::Bot::Types::CallbackQuery)
       handle_callback(update)
     else
