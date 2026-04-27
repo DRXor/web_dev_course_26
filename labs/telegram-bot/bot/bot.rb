@@ -6,12 +6,18 @@ require 'dotenv/load'
 $LOAD_PATH << File.expand_path('../matrix_library/lib', __dir__)
 $LOAD_PATH << File.expand_path('..', __dir__)
 
+# Принудительный вывод логов
 $stdout.sync = true
-puts "=== Starting bot ==="
+STDOUT.sync = true
 
-# Запускаем WEBrick сервер для Render health checks
+puts "=== Starting bot ==="
+puts "Step 1: Loading dependencies completed"
+
+# Запускаем WEBrick сервер
+puts "Step 2: Starting WEBrick server..."
 server_thread = Thread.new do
   begin
+    puts "Step 2.1: Creating WEBrick server on port #{ENV['PORT']&.to_i || 10000}"
     server = WEBrick::HTTPServer.new(
       Port: ENV['PORT']&.to_i || 10000,
       Logger: WEBrick::Log.new(File.open(File::NULL, 'w')),
@@ -28,38 +34,43 @@ server_thread = Thread.new do
       res.body = "OK"
     end
 
-    trap('TERM') { server.shutdown }
-    trap('INT') { server.shutdown }
-    
+    puts "Step 2.2: Starting WEBrick server"
     server.start
-    puts "WEBrick server started on port #{ENV['PORT'] || 10000}"
   rescue => e
     puts "WEBrick error: #{e.message}"
+    puts e.backtrace
   end
 end
 
 sleep 2
+puts "Step 3: WEBrick server thread started"
 
 TOKEN = ENV['TELEGRAM_BOT_TOKEN']
+puts "Step 4: TOKEN = #{TOKEN ? 'PRESENT' : 'MISSING'}"
+puts "Step 4.1: TOKEN value: #{TOKEN[0..10]}..." if TOKEN
 
 if TOKEN.nil? || TOKEN.empty?
   puts "ERROR: TELEGRAM_BOT_TOKEN is not set!"
   exit 1
 end
 
-puts "Token found: #{TOKEN[0..10]}..."
+puts "Step 5: Attempting to start Telegram bot..."
 
-# Запускаем бота с правильной инициализацией контроллера
 begin
+  puts "Step 5.1: Calling Telegram::Bot::Client.run"
   Telegram::Bot::Client.run(TOKEN) do |bot|
-    puts "Bot client created successfully"
+    puts "Step 6: Bot client created successfully"
     
-    # Передаем bot в контроллер, а не nil!
+    puts "Step 7: Creating MatrixController with bot"
     controller = MatrixController.new(bot)
-    puts "MatrixController initialized with bot"
+    puts "Step 8: MatrixController initialized"
+    
+    puts "Step 9: Bot is now listening for updates..."
+    puts "=== Bot is ready and waiting for messages ==="
     
     bot.listen do |update|
       begin
+        puts "Received update: #{update.class}"
         controller.handle(update)
       rescue => e
         puts "ERROR in handle: #{e.message}"
@@ -68,9 +79,10 @@ begin
     end
   end
 rescue => e
-  puts "FATAL ERROR: #{e.message}"
+  puts "FATAL ERROR in bot initialization: #{e.message}"
   puts e.backtrace
   exit 1
 end
 
+puts "This line should not be reached"
 server_thread.join
