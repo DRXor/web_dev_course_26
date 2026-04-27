@@ -5,7 +5,7 @@ require 'json'
 
 require_relative '../controllers/matrix_controller'
 
-TOKEN = ENV['TOKEN']
+TOKEN = ENV['TELEGRAM_BOT_TOKEN']
 RENDER_HOST = "https://matrix-telegram-bot-aroi.onrender.com"
 
 puts "=== Matrix Bot starting on Render (Webhook mode) ==="
