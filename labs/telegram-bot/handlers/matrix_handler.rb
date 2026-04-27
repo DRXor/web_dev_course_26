@@ -36,7 +36,7 @@ class MatrixHandler
     when '/start'
       bot.api.send_message(
         chat_id: chat_id,
-        text: "Привет! Я бот для работы с матрицами.\n\nВыбери операцию:",
+        text: "Привет\! Я бот для работы с матрицами.\n\nВыбери операцию:",
         reply_markup: main_keyboard,
         parse_mode: 'MarkdownV2'
       )
