@@ -38,7 +38,7 @@ class MatrixHandler
         chat_id: chat_id,
         text: "Привет\! Я бот для работы с матрицами.\n\nВыбери операцию:",
         reply_markup: main_keyboard,
-        parse_mode: 'MarkdownV2'
+        parse_mode: nil
       )
 
     when '/add', '/mul', '/sub', '/det', '/inv', '/transpose', '/trace', '/sym'
@@ -108,7 +108,7 @@ class MatrixHandler
        (result.respond_to?(:to_a) && result.to_a.is_a?(Array))
 
       matrix_text = format_matrix(result)
-      text = "Результат:\n```matrix\n#{matrix_text}\n```"
+      text = "Результат:\n```\n#{matrix_text}\n```"
     else
       text = "Результат:\n```\n#{result}\n```"
     end
@@ -116,10 +116,9 @@ class MatrixHandler
     bot.api.send_message(
       chat_id: chat_id,
       text: text,
-      parse_mode: 'MarkdownV2'
+      parse_mode: 'Markdown'  
     )
   end
-
   def self.format_matrix(matrix)
     rows = matrix.to_a
     col_widths = rows.transpose.map { |col| col.map(&:to_s).map(&:length).max }
