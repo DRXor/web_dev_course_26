@@ -7,14 +7,14 @@ require 'telegram/bot'
 
 class MatrixController
   COMMANDS = {
-    '/add' => :add,
-    '/sub' => :sub,
-    '/mul' => :mul,
-    '/det' => :det,
-    '/inv' => :inv,
-    '/transpose' => :transpose,
-    '/trace' => :trace,
-    '/sym' => :sym,
+    'add' => :add,
+    'sub' => :sub,
+    'mul' => :mul,
+    'det' => :det,
+    'inv' => :inv,
+    'transpose' => :transpose,
+    'trace' => :trace,
+    'sym' => :sym,
   }
 
   def initialize(bot) 
@@ -22,17 +22,17 @@ class MatrixController
   end
 
   def handle(update)
-    if update.is_a?(Telegram::Bot::Types::CallbackQuery)
-      handle_callback(update)
-    else
-      handle_message(update)
+    if update.callback_query
+      handle_callback(update.callback_query)
+    elsif update.message
+      handle_message(update.message)
     end
   end
 
   private
 
   def handle_callback(query)
-    chat_id = query.message.chat.chat_id
+    chat_id = query.message.chat.id
     message_id = query.message.message_id
     data = query.data
 
@@ -49,7 +49,7 @@ class MatrixController
       UserState.clear(chat_id)
 
       edit_message(
-        chat_id, 
+        chat_id,
         message_id,
         "Выбери операцию:",
         main_keyboard
