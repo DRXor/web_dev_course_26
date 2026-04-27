@@ -1,5 +1,5 @@
 require 'telegram/bot'
-require_relative 'handlers/matrix_handler'
+require_relative '../controllers/matrix_controller'
 require 'webrick'
 
 Thread.new do
@@ -20,8 +20,10 @@ end
 TOKEN = ENV['TELEGRAM_BOT_TOKEN']
 
 Telegram::Bot::Client.run(TOKEN) do |bot|
-  bot.listen do |message|
-    MatrixHandler.call(message, bot)
+  controller = MatrixController.new(bot)
+
+  bot.listen do |update|
+    controller.handle(update)
   end
 end
 
