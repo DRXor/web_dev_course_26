@@ -5,7 +5,7 @@ require 'json'
 
 require_relative '../controllers/matrix_controller'
 
-TOKEN = ENV['TELEGRAM_BOT_TOKEN']
+TOKEN = ENV['TOKEN']
 RENDER_HOST = "https://matrix-telegram-bot-aroi.onrender.com"
 
 puts "=== Matrix Bot starting on Render (Webhook mode) ==="
@@ -27,15 +27,16 @@ if IS_RENDER
   webhook_url = "#{RENDER_HOST}/webhook"
   
   begin
-    response = bot.set_webhook(url: webhook_url)
+    response = bot.api.set_webhook(url: webhook_url)
     
-    if response == true
-      puts "Webhook set successfully"
+    if response['ok']
+      puts "Webhook set successfully: #{response['description']}"
     else
       puts "Webhook response: #{response.inspect}"
     end
   rescue => e
     puts "Error while setting webhook: #{e.message}"
+    puts e.backtrace
   end
   
   puts "=== Bot started successfully and listening for webhooks ==="
@@ -45,25 +46,38 @@ if IS_RENDER
   set :port, 3000
   
   post '/webhook' do
-    request.body.rewind
-    update = JSON.parse(request.body.read)
+    content_type :json
     
-    bot = Telegram::Bot::Client.new(TOKEN)
-    
-    if update['message']
-      chat_id = update['message']['chat']['id']
-      text = update['message']['text']
-
-      response_text = "Echo: #{text}"
+    begin
+      request.body.rewind
+      update = JSON.parse(request.body.read)
       
-      bot.api.send_message(
-        chat_id: chat_id,
-        text: response_text
-      )
+      bot = Telegram::Bot::Client.new(TOKEN)
+      
+      if update['message']
+        chat_id = update['message']['chat']['id']
+        text = update['message']['text']
+        
+        puts "Received message: #{text} from #{chat_id}"
+        
+        matrix_controller = MatrixController.new
+        response_text = matrix_controller.process(text)
+        
+        response_text = "Echo: #{text}"
+        
+        bot.api.send_message(
+          chat_id: chat_id,
+          text: response_text
+        )
+      end
+      
+      status 200
+      body ''
+    rescue => e
+      puts "Webhook error: #{e.message}"
+      status 200 
+      body ''
     end
-    
-    status 200
-    body ''
   end
 else
   puts "=== Running in POLLING mode (Local development) ==="
@@ -74,7 +88,10 @@ else
   bot.listen do |message|
     begin
       puts "Received message from #{message.from.first_name}: #{message.text}"
-
+      
+      matrix_controller = MatrixController.new
+      response_text = matrix_controller.process(message.text)
+      
       response_text = "Echo: #{message.text}"
       
       bot.api.send_message(
