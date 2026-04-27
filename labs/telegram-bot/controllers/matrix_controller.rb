@@ -19,78 +19,34 @@ class MatrixController
 
   def initialize(bot) 
     @bot = bot
+    puts "MatrixController initialized with bot: #{bot ? 'yes' : 'no'}"
   end
 
   def handle(update)
+    puts "Received update: #{update.inspect[0..100]}"
+    
     if update.callback_query
       handle_callback(update.callback_query)
     elsif update.message
       handle_message(update.message)
     end
+  rescue => e
+    puts "Critical error in handle: #{e.message}"
+    puts e.backtrace
   end
 
   private
 
-  def handle_callback(query)
-    chat_id = query.message.chat.id
-    message_id = query.message.message_id
-    data = query.data
-
-    if COMMANDS[data]
-      UserState.set(chat_id, COMMANDS[data])
-
-      edit_message(
-        chat_id,
-        message_id,
-        "Выбрана операция: #{data}\n\n#{format_hint(COMMANDS[data])}",
-        back_keyboard
-      )
-    elsif data == 'back'
-      UserState.clear(chat_id)
-
-      edit_message(
-        chat_id,
-        message_id,
-        "Выбери операцию:",
-        main_keyboard
-      )
-    end
-  end
-
-  def handle_message(message)
-    return unless message.text
-
-    chat_id = message.chat.id
-    mode = UserState.get(chat_id)
-
-    if mode.nil?
-      send_message(chat_id, "Сначала выбери операцию", main_keyboard)
-      return
-    end
-
-     if message.text.include?('|')
-      a_str, b_str = message.text.split('|', 2)
-      result = MatrixService.execute(
-        mode,
-        MatrixParser.parse(a_str),
-        MatrixParser.parse(b_str)
-      )
-    else
-      result = MatrixService.execute(
-        mode,
-        MatrixParser.parse(message.text)
-      )
-    end
-
-     send_message(
-      chat_id,
-      "Результат:\n#{MatrixFormatter.format(result)}",
-      main_keyboard,
-      true
+  def send_message(chat_id, text, keyboard = nil, markdown = false)
+    puts "Sending message to #{chat_id}: #{text[0..50]}"
+    @bot.api.send_message(
+      chat_id: chat_id,
+      text: text,
+      reply_markup: keyboard,
+      parse_mode: (markdown ? 'Markdown' : nil)
     )
-
-  rescue ArgumentError => e
-    send_message(chat_id, "Ошибка: #{e.message}", back_keyboard)
+  rescue => e
+    puts "Failed to send message: #{e.message}"
   end
 
 
