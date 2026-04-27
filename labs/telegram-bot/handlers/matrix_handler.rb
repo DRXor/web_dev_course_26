@@ -129,4 +129,31 @@ class MatrixHandler
       end.join("  ")
     end.join("\n")
   end
+
+  def self.handle_callback(callback, bot)
+    chat_id = callback.message.chat.id
+    data = callback.data   # "add", "mul", "det" и т.д.
+
+    @state[chat_id] = data.to_sym
+
+    examples = {
+      add:  "1,2;3,4 | 5,6;7,8",
+      mul:  "1,2;3,4 | 5,6;7,8",
+      sub:  "1,2;3,4 | 5,6;7,8",
+      det:  "1,2;3,4",
+      inv:  "1,2;3,4",
+      transpose: "1,2;3,4",
+      trace: "1,2;3,4",
+      sym:  "1,2;3,4"
+    }
+
+    bot.api.send_message(
+      chat_id: chat_id,
+      text: "Выбрана операция: *#{data.upcase}*\n\nОтправь матрицу(ы) в формате:\n`#{examples[data.to_sym]}`",
+      parse_mode: 'Markdown'
+    )
+
+    # Обязательно отвечаем Telegram, что кнопка обработана
+    bot.api.answer_callback_query(callback_query_id: callback.id)
+  end
 end

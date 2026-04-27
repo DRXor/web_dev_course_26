@@ -21,7 +21,13 @@ TOKEN = ENV['TELEGRAM_BOT_TOKEN']
 
 Telegram::Bot::Client.run(TOKEN) do |bot|
   bot.listen do |message|
-    MatrixHandler.call(message, bot)
+    if message.is_a?(Telegram::Bot::Types::CallbackQuery)
+      # Нажали на inline-кнопку
+      MatrixHandler.handle_callback(message, bot)
+    else
+      # Обычное текстовое сообщение
+      MatrixHandler.call(message, bot)
+    end
   end
 end
 
